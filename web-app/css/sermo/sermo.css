@@ -1,0 +1,184 @@
+
+body {
+	background: #808080;
+	/*background: url(../../images/sermo/old-paper.png) no-repeat center center fixed;*/
+    /*background-repeat:no-repeat;*/
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+	/*color: #333333;*/
+	/*margin: 0 auto;*/
+	/*max-width: 960px;*/
+	/*overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
+	 /*  -moz-box-shadow: 0 0 0.3em #255b17;
+	-webkit-box-shadow: 0 0 0.3em #255b17;
+	        box-shadow: 0 0 0.3em #ffff00;*/
+	        
+}
+
+.header {
+/*	background-color: #ead995;*/
+	background: url(../../images/sermo/old-paper_header.png) no-repeat center center fixed;
+    /*background-repeat:no-repeat;*/
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+/*     color: #000; */
+	clear: both;
+/* 	font-size: 0.8em; */
+	margin-top:0;
+	padding: 0.8em;
+	min-height: 10vh;
+/* 	position: absolute; */
+/*     top: 0; */
+}
+
+#sermoBg {
+	background: url(../../images/sermo/old-paper.png) no-repeat center center fixed;
+	-webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    overflow-y:auto;
+    min-height:85vh;  
+    margin-bottom: 5vh; 
+/* 	position: relative;  */
+}
+
+.footer {
+	/*background: #ead995;*/
+	background: url(../../images/sermo/old-paper_footer.png) no-repeat center center fixed;
+    /*background-repeat:no-repeat;*/
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+/* 	color: #000; */
+	clear: both;
+/* 	font-size: 0.8em; */
+	margin-top: 1.5em;
+	padding: 0.8em;
+	height: 3vh;
+	position: fixed;
+    bottom: 0;
+    overflow-x:hidden;
+}
+
+.bibl{
+	
+	color: #ff0000;
+	font-weight: bold;
+}
+
+.quote{
+	
+	color: #000080;
+	font-weight: bold;
+}
+
+.note{
+	color: #0080ff;
+	font-weight: normal;
+	
+}
+
+.catchWord{
+	color: #ff8040;
+	font-weight: normal;
+	
+}
+
+/* .pageBreak{ */
+/* //	color: #696969; */
+/* //	font-weight: normal; */
+	
+/* } */
+
+.par{
+	color: #696969;
+	font-weight: normal;
+	
+}
+.italic{
+/* 	color: #8000ff; */
+	font-style: italic;
+}
+.bold{
+	font-weight: bold;
+
+}
+									
+.underline{
+	text-decoration: underline;
+}
+
+.superscript{
+	vertical-align: super;
+	font-size:80%;
+}
+
+.subscript{
+	vertical-align: sub;
+	font-size:80%;
+}
+.strikeThrought{
+	text-decoration: line-through;
+}
+
+.smallItalic{
+	font-size:80%;
+		font-style: italic;
+}							
+							
+								
+								
+.sic{
+	color: #00ff00;
+	text-decoration: line-through;
+}
+.abbr{
+	color: #00ff00;
+	
+}
+
+.content {
+ min-height:100vh; 
+}
+#doc-container {
+/* min-height:	height:100%;  */
+margin-bottom: 1vh;
+}
+
+.container {
+/* 	height:100vh;  */
+}
+
+.row {
+  display: flex; /* equal height of the children */
+}
+
+.col {
+  flex: 1; /* additionally, equal width */
+  
+  padding: 1em;
+  border: solid;
+}
+.docInfo{
+	font-size:120%;
+	font-weight: bold;
+}
+.currentPageImage{
+	width:600px;
+}
+.margin{
+	display: inline-block;
+}
+.moreThan1{
+	font-size:70%;
+}
+.selectPage{
+	padding: 1em;
+	
+}

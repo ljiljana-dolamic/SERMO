@@ -1,0 +1,66 @@
+<project name="SERMO" default="build-war">
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+
+	<if>
+		<os family="windows" />
+		<then>
+			<echo message="Building for Windows..." />
+			<property name="grails.bin" value="${grails.home}/bin/grails.bat" />
+		</then>
+		<else>
+			<echo message="Building for Unix..." />
+			<property name="grails.bin" value="${grails.home}/bin/grails" />
+		</else>
+	</if>
+
+	<!-- rename the war file -->
+	<property name="original.target.war" value="target/SERMO-0.1.war" />
+
+	<target name="build-war">
+		<exec executable="${grails.bin}">
+			<!-- despite the weird name, this DISABLES the stacktrace.log file -->
+			<arg value="-Dgrails.full.stacktrace=true"/>
+			<arg value="war" />
+		</exec>
+	</target>
+
+	<!-- to use your *-dev.properties file -->
+	<target name="build-for-local" depends="build-war">
+		<bundle_config_file configfile="${user.name}-dev.properties" />
+	</target>
+
+	<target name="build-for-production" depends="build-war">
+		<bundle_config_file configfile="SERMO-production.properties" />
+	</target>
+	
+	<!-- bundles the appropriate config file into the war before deploying -->
+	<macrodef name="bundle_config_file">
+
+		<!-- config file to bundle -->
+		<attribute name="configfile" />
+
+		<!-- unzip war, pack in the config file, re-zip war -->
+		<sequential>
+
+			<echo message="Bundling config file @{configfile}" />
+
+			<loadproperties srcFile="@{configfile}" />
+			<!-- set up a default if it's not defined in the properties file 
+			             (ant will only set these if they're nost already set) -->
+			<property name="target.war" value="target/SERMO.war" />
+
+			<unzip src="${original.target.war}" dest="target/tmpdir" />
+			<copy file="@{configfile}" tofile="target/tmpdir/WEB-INF/classes/SERMO-config.properties" />
+
+			
+
+			<war destfile="${target.war}" basedir="target/tmpdir" />
+			<delete dir="target/tmpdir" />
+			<delete file="${original.target.war}" />
+
+		</sequential>
+	</macrodef>
+
+
+</project>
