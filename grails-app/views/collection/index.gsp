@@ -17,13 +17,13 @@
 	<div id="page-body" class ="block">
 	
 		<div id="status" class="column span-4">
-			<h1>Available documents:</h1>
+			<h1>Collection:</h1>
 			<table style="width: 100%">
-				<tr>
-					<td><h2>Author</h2></td>
-					<td><h2>Year</h2></td>
-
-				</tr>
+<%--				<tr>--%>
+<%--					<td><h2>Author</h2></td>--%>
+<%--					<td><h2>Year</h2></td>--%>
+<%----%>
+<%--				</tr>--%>
 
 				<g:each in="${docs}" var="doc" status="i">
 

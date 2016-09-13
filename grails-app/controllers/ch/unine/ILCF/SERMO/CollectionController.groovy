@@ -1,8 +1,11 @@
 package ch.unine.ILCF.SERMO
 
+
+import ch.unine.ILCF.SERMO.DocumentDisplayService;
+
 class CollectionController {
 	//def IMAGES_DIR = grailsApplication.config.sermoPagesImages.filedir
-	
+	DocumentDisplayService documentDisplayService
     def index() {
 		params.max = params.max ?: 10
 		def docsInCollection = Collection.list(params)
@@ -24,9 +27,21 @@ class CollectionController {
 	
 	def showDocInfo(){
 		def id = params.id
-		params.remove('id')
 		render(template : "docs/doc_info_head", model:[params:params]);
-		render(template : "docs/doc-body", model:[docId:id])
+		def filedir = params.filedir?: grailsApplication.config.sermoXMLDefault.filedir;
+		
+		
+		def frontPageDetails = documentDisplayService.process(filedir,id,"front");
+		
+		render(template : "docs/doc-front", model:[docId:id,page:frontPageDetails.page,pages:frontPageDetails.pages])
+		
+		def bodyPageDetails = documentDisplayService.process(filedir,id,"body");
+		//params.remove('id')
+		
+		render(template : "docs/doc-body", model:[docId:id,page:bodyPageDetails.page,pages:bodyPageDetails.pages])
+		
+	//	render(template : "docs/doc-body", model:[docId:id])
+		render(template : "docs/doc-stats", model:[docId:id])
 		 //render "$id"
 		
 	}

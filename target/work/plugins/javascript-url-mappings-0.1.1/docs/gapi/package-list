@@ -1,0 +1,7 @@
+DefaultPackage
+grails-app.conf
+grails-app.controllers.grails.plugin.javascripturlmappings
+grails-app.taglib.grails.plugin.javascripturlmappings
+scripts
+src.groovy.grails.plugin.javascripturlmappings
+test.unit.grails.plugin.javascripturlmappings
