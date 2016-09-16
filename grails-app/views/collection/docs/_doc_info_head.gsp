@@ -1,5 +1,5 @@
 <div  class="docToShow">
-<div class="docInfo block row">
+<div class="status docInfo block row">
 <div class="span-6 column">
 ${params.year}
 </div>
@@ -23,9 +23,9 @@ ${params.aLastName}
 <div>
 <ul id="docInfoTabs" class="block row" >
 
-<li id = "showFront" class="docPartToShow  span-6 column selected">Titre de r.</li>
-<li id = "showSermon" class="docPartToShow  span-6 column">Sermon</li>
-<li id = "showStats" class="docPartToShow span-6 column">Stats</li>
+<li id = "showFront" class="status docPartToShow  span-6 column selected">Titre de r.</li>
+<li id = "showSermon" class="status docPartToShow  span-6 column">Sermon</li>
+<li id = "showStats" class="status docPartToShow span-6 column">Stats</li>
 </ul>
 </div>
 </div>

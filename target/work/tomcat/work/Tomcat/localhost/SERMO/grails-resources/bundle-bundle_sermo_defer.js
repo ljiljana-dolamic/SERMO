@@ -335,87 +335,50 @@ function loadTipsy(){
     
 })(jQuery);
 
-var DocPartShowChanger;
+//var DocPartShowChanger;
 
 
 (function($) {
     "use strict";
 
-    
 
-    var showFront    = $('#showFront'),
-        showSermon   = $('#showSermon'),
-        showStats    = $('#showStats'),
-        front = $('.front'),
-        sermon = $('.sermon'),
-        stats =$('.stats');
-   
-    
-    DocPartShowChanger = {   
-        
-        initCallbacks: function() {
-            var self = this;
+            $('#doc-container').on("click",'#showFront',function(){
 
-            showFront.click(function(e){
-
-            	DocPartShowChanger.showFront();
-                e.preventDefault();
+            	 $('#showSermon').removeClass('selected');
+            	$('#showFront').addClass('selected');
+            	$('#showStats').removeClass('selected');
+            	
+            	$('.titre').show();
+            	$('.front').show();
+            	$('.sermon').hide();
+            	$('.stats').hide();
             });
 
-            showSermon.click(function(e){
+            
 
-            	DocPartShowChanger.showSermon();
-                e.preventDefault();
+            $('#doc-container').on("click",'#showSermon',function(){
+
+            	 $('#showSermon').addClass('selected');
+            	$('#showFront').removeClass('selected');
+            	$('#showStats').removeClass('selected');
+              
+            	$('.front').hide();
+            	$('.sermon').show();
+            	$('.stats').hide();
+            });
+            
+
+            $('#doc-container').on("click",'#showStats',function(){
+
+            	 $('#showSermon').removeClass('selected');
+            	$('#showFront').removeClass('selected');
+            	$('#showStats').addClass('selected');
+              
+            	$('.front').hide();
+            	$('.sermon').hide();
+            	$('.stats').show();
             });
 
-            showStats.click(function(e){
-
-            	DocPartShowChanger.showStats();
-                e.preventDefault();
-            });
-        },
-
-       
-
-        showFront : function() {
-            var self = this;
-
-            showSermon.removeClass('selected');
-            showStats.removeClass('selected');
-            showFront.addClass('selected');
-            
-            front.show();
-            sermon.hide();
-            stats.hide();
-            
-        },
-
-        showSermon : function() {
-        	var self = this;
-
-            showSermon.addClass('selected');
-            showStats.removeClass('selected');
-            showFront.removeClass('selected');
-            
-            front.hide();
-            sermon.show();
-            stats.hide();
-        },
-
-        showStats : function() {
-        	var self = this;
-
-            showSermon.removeClass('selected');
-            showStats.addClass('selected');
-            showFront.removeClass('selected');
-            
-            front.show();
-            sermon.hide();
-            stats.show();
-        },
-       
-    
-        DocPartShowChanger.initCallbacks();
     
 })(jQuery);
 

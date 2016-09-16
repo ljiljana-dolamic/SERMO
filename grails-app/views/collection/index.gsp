@@ -37,8 +37,9 @@
 							<r:script>
 								$('#docInfo${i}').click(function() {
 
-									$('#selected-doc').load(this.href,function(){loadTipsy();});	
-															
+									$('#selected-doc').load(this.href,function(){loadTipsy();});
+									$('#collection-info').hide();	
+									$('#selected-doc').show();					
 									return false;
 								});
 							</r:script>
@@ -58,8 +59,12 @@
 			</div>
 		</div>
 		
-		<div id ="doc-container" class="column span-18 last">
-			<div id="selected-doc"> </div>
+		<div id ="doc-container" class="column span-18 last" >
+		<div id="collection-info" >
+		  <g:render template="docs/collection-info" model="${[docs:docs]}"></g:render>
+		 </div>
+			<div id="selected-doc" style="display:none"> </div>
+			
 		   
 		</div>	
 

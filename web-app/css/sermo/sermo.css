@@ -168,20 +168,20 @@ margin-bottom: 1vh;
 .docInfo{
 	font-size:120%;
 	font-weight: bold;
-	border: .2em solid #400000;
-	margin: 1em 1em 1em;
-	padding: 1em;
-/* 	width: 12em; */
-/*  	float: left;  */
-	-moz-box-shadow: 0px 0px 1.25em #ccc;
-	-webkit-box-shadow: 0px 0px 1.25em #ccc;
-	box-shadow: 0px 0px 1.25em #ccc;
-	-moz-border-radius: 0.6em;
-	-webkit-border-radius: 0.6em;
-	border-radius: 0.6em;
+/* 	border: .2em solid #400000; */
+/* 	margin: 1em 1em 1em; */
+/* 	padding: 1em; */
+/* /* 	width: 12em; */ */
+/* /*  	float: left;  */ */
+/* 	-moz-box-shadow: 0px 0px 1.25em #ccc; */
+/* 	-webkit-box-shadow: 0px 0px 1.25em #ccc; */
+/* 	box-shadow: 0px 0px 1.25em #ccc; */
+/* 	-moz-border-radius: 0.6em; */
+/* 	-webkit-border-radius: 0.6em; */
+/* 	border-radius: 0.6em; */
 }
 .currentPageImage{
-	width:600px;
+	width:80%;
 }
 .margin{
 	display: inline-block;
@@ -197,18 +197,19 @@ margin-bottom: 1vh;
 .docPartToShow{
 	font-size:100%;
 	font-weight: bold;
-	border: .2em solid #400000;
-	margin: 1em 1em 1em;
-	padding: 1em;
-/* 	width: 12em; */
-/*  	float: left;  */
-	-moz-box-shadow: 0px 0px 1.25em #ccc;
-	-webkit-box-shadow: 0px 0px 1.25em #ccc;
-	box-shadow: 0px 0px 1.25em #ccc;
-	-moz-border-radius: 0.6em;
-	-webkit-border-radius: 0.6em;
-	border-radius: 0.6em;
+/* 	border: .2em solid #400000; */
+/* 	margin: 1em 1em 1em; */
+/* 	padding: 1em; */
+/* /* 	width: 12em; */ */
+/* /*  	float: left;  */ */
+/* 	-moz-box-shadow: 0px 0px 1.25em #ccc; */
+/* 	-webkit-box-shadow: 0px 0px 1.25em #ccc; */
+/* 	box-shadow: 0px 0px 1.25em #ccc; */
+/* 	-moz-border-radius: 0.6em; */
+/* 	-webkit-border-radius: 0.6em; */
+/* 	border-radius: 0.6em; */
 }
+
 
 ul#docInfoTabs >li{
 	
@@ -232,4 +233,24 @@ ul#docInfoTabs > li:hover {
 ul#docInfoTabs {
 	
 	list-style-type: none;
+}
+
+.status {
+
+	border: .2em solid #400000;
+	margin: 1em 1em 1em;
+	padding: 1em;
+/* 	width: 12em; */
+/*  	float: left;  */
+	-moz-box-shadow: 0px 0px 1.25em #ccc;
+	-webkit-box-shadow: 0px 0px 1.25em #ccc;
+	box-shadow: 0px 0px 1.25em #ccc;
+	-moz-border-radius: 0.6em;
+	-webkit-border-radius: 0.6em;
+	border-radius: 0.6em;
+}
+
+.imageThumb{
+	width:80%;
+	
 }
