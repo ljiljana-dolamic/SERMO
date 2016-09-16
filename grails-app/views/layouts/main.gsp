@@ -28,9 +28,21 @@
 
 </head>
 <body>
-	<div class="content">
+	<div class="content" >
 		<g:render template="/header/header" />
-		<div id="sermoBg" class="container">
+		<div class="navigation-bar container">
+			<div class="nav column span-5 status">
+				<g:render template="/navigation/menu-about" />
+			</div>
+			<div class="nav column span-5 status">
+				<g:render template="/navigation/menu-people" />
+			</div>
+			<div class=" nav column span-5 status">
+				<g:render template="/navigation/menu-collection" />
+			</div>
+			
+		</div>
+		<div id="sermoBg" class="container" >
 
 
 
