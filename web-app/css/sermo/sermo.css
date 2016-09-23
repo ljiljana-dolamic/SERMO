@@ -1,7 +1,7 @@
 
 body {
-	background: #808080;
-	/*background: url(../../images/sermo/old-paper.png) no-repeat center center fixed;*/
+/* 	background: #808080; */
+	background: url(../../images/sermo/old-paper.png) no-repeat center center fixed;
     /*background-repeat:no-repeat;*/
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -17,35 +17,21 @@ body {
 	        
 }
 
-.header {
-/*	background-color: #ead995;*/
-	background: url(../../images/sermo/old-paper_header.png) no-repeat center center fixed;
-    /*background-repeat:no-repeat;*/
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size:cover;
-/*     color: #000; */
-	clear: both;
-/* 	font-size: 0.8em; */
-	margin-top:0;
-	padding: 0.8em;
-	min-height: 10vh;
-/* 	position: absolute; */
-/*     top: 0; */
-}
+
 
 #sermoBg {
-	background: url(../../images/sermo/old-paper.png) no-repeat center center fixed;
+	
+	background: hsla(40, 40%, 100%, 0.8);
 	-webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
     background-size:cover;
     overflow-y:auto;
+    overflow-x:auto;
     min-height:85vh;  
 /*     margin-bottom: 3vh;  */
 /* 	position: relative;  */
-	border: .2em solid #400000;
+	border: .1em solid #400000;
 	margin: 1em 1em 1em;
 	padding: 1em;
 /* 	width: 12em; */
@@ -53,14 +39,15 @@ body {
 	-moz-box-shadow: 0px 0px 1.25em #ccc;
 	-webkit-box-shadow: 0px 0px 1.25em #ccc;
 	box-shadow: 0px 0px 1.25em #ccc;
-	-moz-border-radius: 0.6em;
-	-webkit-border-radius: 0.6em;
-	border-radius: 0.6em;
+/* 	-moz-border-radius: 0.6em; */
+/* 	-webkit-border-radius: 0.6em; */
+/* 	border-radius: 0.6em; */
 }
 
 .footer {
-	/*background: #ead995;*/
-	background: url(../../images/sermo/old-paper_footer.png) no-repeat center center fixed;
+	background: hsla(40, 40%, 100%, 0.8);
+/* 	background: url(../../images/sermo/old-paper.png) no-repeat center center fixed; */
+/* 	background: url(../../images/sermo/old-paper_footer.png) no-repeat center center fixed; */
     /*background-repeat:no-repeat;*/
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -76,6 +63,47 @@ body {
 	position: fixed;
     bottom: 0;
     overflow-x:hidden;
+    
+    border: .1em solid #400000;
+	margin-left: 1em;
+	margin-right: 1em;
+/* 	padding: .25em; */
+/* 	width: 12em; */
+/*  	float: left;  */
+	-moz-box-shadow: 0px 0px 1.25em #ccc;
+	-webkit-box-shadow: 0px 0px 1.25em #ccc;
+	box-shadow: 0px 0px 1.25em #ccc;
+/* 	-moz-border-radius: 0.6em; */
+/* 	-webkit-border-radius: 0.6em; */
+/* 	border-radius: 0.6em; */
+}
+
+.header {
+
+/* background: url(../../images/sermo/old-paper.png) no-repeat center center fixed; */
+background: hsla(40, 40%, 100%, 0.8);
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+
+	clear: both;
+
+	margin-top:0;
+	padding: 0.8em;
+
+
+
+	border: .1em solid #400000;
+	margin-left: 1em;
+	margin-right: 1em;
+
+	-moz-box-shadow: 0px 0px 1.25em #ccc;
+	-webkit-box-shadow: 0px 0px 1.25em #ccc;
+	box-shadow: 0px 0px 1.25em #ccc;
+/* 	-moz-border-radius: 0.6em; */
+/* 	-webkit-border-radius: 0.6em; */
+/* 	border-radius: 0.6em; */
 }
 
 .bibl{
@@ -181,18 +209,11 @@ margin-bottom: 1vh;
 .docInfo{
 	font-size:120%;
 	font-weight: bold;
-/* 	border: .2em solid #400000; */
-/* 	margin: 1em 1em 1em; */
-/* 	padding: 1em; */
-/* /* 	width: 12em; */ */
-/* /*  	float: left;  */ */
-/* 	-moz-box-shadow: 0px 0px 1.25em #ccc; */
-/* 	-webkit-box-shadow: 0px 0px 1.25em #ccc; */
-/* 	box-shadow: 0px 0px 1.25em #ccc; */
-/* 	-moz-border-radius: 0.6em; */
-/* 	-webkit-border-radius: 0.6em; */
-/* 	border-radius: 0.6em; */
+display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .currentPageImage{
 	width:80%;
 }
@@ -207,21 +228,7 @@ margin-bottom: 1vh;
 	
 }
 
-.docPartToShow{
-	font-size:100%;
-	font-weight: bold;
-/* 	border: .2em solid #400000; */
-/* 	margin: 1em 1em 1em; */
-/* 	padding: 1em; */
-/* /* 	width: 12em; */ */
-/* /*  	float: left;  */ */
-/* 	-moz-box-shadow: 0px 0px 1.25em #ccc; */
-/* 	-webkit-box-shadow: 0px 0px 1.25em #ccc; */
-/* 	box-shadow: 0px 0px 1.25em #ccc; */
-/* 	-moz-border-radius: 0.6em; */
-/* 	-webkit-border-radius: 0.6em; */
-/* 	border-radius: 0.6em; */
-}
+
 
 
 ul#docInfoTabs >li{
@@ -250,7 +257,7 @@ ul#docInfoTabs {
 
 .status {
 
-	border: .2em solid #400000;
+	border: .1em solid #400000;
 	margin: 1em 1em 1em;
 	padding: .25em;
 /* 	width: 12em; */
@@ -258,12 +265,41 @@ ul#docInfoTabs {
 	-moz-box-shadow: 0px 0px 1.25em #ccc;
 	-webkit-box-shadow: 0px 0px 1.25em #ccc;
 	box-shadow: 0px 0px 1.25em #ccc;
-	-moz-border-radius: 0.6em;
-	-webkit-border-radius: 0.6em;
-	border-radius: 0.6em;
+/* 	-moz-border-radius: 0.6em; */
+/* 	-webkit-border-radius: 0.6em; */
+/* 	border-radius: 0.6em; */
 }
 
 .imageThumb{
 	width:80%;
 	
+}
+
+.pageImage{
+	
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.pageBreak{
+	
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+
+.docPartToShow{
+	font-size:100%;
+	font-weight: bold;
+	text-align:center;
+}
+
+.docToShow{
+	text-align:center;
+/*   display: flex; */
+/*   align-items: center; */
+/*   justify-content: center; */
 }

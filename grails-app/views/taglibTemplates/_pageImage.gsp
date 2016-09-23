@@ -1,4 +1,4 @@
-<div class="pageImage column span-12 last">
+<div class="pageImage status column span-12 last">
 	<%--<g:img dir='images/people' file='LjD.png'  alt='no image' height= '400' />--%>
 	<g:each in="${pages}" var="docPage" status="i">
 		<g:if test="${docPage == 'titre'}">

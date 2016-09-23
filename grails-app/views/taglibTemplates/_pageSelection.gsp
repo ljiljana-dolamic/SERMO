@@ -1,5 +1,5 @@
-<div class="selectPage block">
-	<div class="block row">
+<div class="selectPage status block row">
+<%--	<div class="block row">--%>
 		<div class="column span-2 prepend-6">
 			<button id="prevPage" onclick="previousPage()">Prev</button>
 		</div>
@@ -37,7 +37,7 @@
 			
 	</div>	
 	
-</div>
+<%--</div>--%>
 <%--<r:script>--%>
 <%--(function($){--%>
 <%--	$(document).ready(function(){--%>

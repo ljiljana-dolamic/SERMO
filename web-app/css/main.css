@@ -37,8 +37,8 @@ html * {
 }
 
 body {
-	background: #400000;
-/* 	background: url(../images/sermo/old-paper.png) no-repeat center center fixed; */
+/* 	background: #f8f1da; */
+	background: url(../images/sermo/old-paper.png) no-repeat center center fixed;
     /*background-repeat:no-repeat;*/
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -139,7 +139,7 @@ img {
 /* NAVIGATION MENU */
 
 .nav {
-	background-color: #800000;
+	background: hsla(40, 40%, 100%, 0.8);
 	
 }
 
@@ -173,7 +173,7 @@ img {
 
 .nav a:focus, .nav a:hover {
 	background-color: #999999;
-	color: #ffffff;
+	background: hsla(40, 40%, 100%, 0.8);
 	outline: none;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }

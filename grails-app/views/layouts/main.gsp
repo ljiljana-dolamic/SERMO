@@ -50,10 +50,12 @@
 
 
 		</div>
-		<g:render template="/footer/footer" />
+		
 	</div>
 
-
+<div class="bottomContent span-24">
+		<g:render template="/footer/footer" />
+		</div>
 
 <r:require module="sermo" />
 

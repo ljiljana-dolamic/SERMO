@@ -1,3 +1,3 @@
-<div class="pageContent column span-12">
+<div class="pageContent status column span-12">
 ${raw(page)}
 </div>
