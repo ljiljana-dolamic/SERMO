@@ -64,6 +64,14 @@ function showPage(val){
 	$(".pageBreak").hide();   
 	$("#"+val).show();
 	$(".currentPageImage").hide();
+	var image = $(".selectedImage");
+//	$(".currentPageImage").removeClass("selectedImage");
+	
+	$.removeData(image, 'elevateZoom');//remove zoom instance from image
+
+    $('.zoomContainer').remove();// remove zoom container from DOM
+    image.removeClass("selectedImage");
+	$("#"+val+"_image").addClass("selectedImage");
 	$("#"+val+"_image").show();
 }
 

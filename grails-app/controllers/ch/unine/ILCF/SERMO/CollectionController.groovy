@@ -2,26 +2,39 @@ package ch.unine.ILCF.SERMO
 
 
 import ch.unine.ILCF.SERMO.DocumentDisplayService;
+import ch.unine.ILCF.SERMO.statistics.CollectionStatsService;
+
 
 class CollectionController {
 	//def IMAGES_DIR = grailsApplication.config.sermoPagesImages.filedir
 	DocumentDisplayService documentDisplayService
+	
+	CollectionStatsService collectionStatsService
+	
+	
     def index() {
 		params.max = params.max ?: 10
 		def docsInCollection = Collection.list(params)
 		def total= Collection.list().size()
 		
-		[docs:docsInCollection, total:total, params:params]
+		Map result = collectionStatsService.getCollBaseStats();
+		
+		[docs:docsInCollection, total:total, totalTokens:result.totalCount ,
+//			sermoT:result.noTokens["body_sermon"],
+//			textT:result.noTokens["body_text"],
+//			noteT:result.noTokens["body_sermon_note"], 
+			tokens:result.noTokens,
+			params:params]
 	}
 	
-	def withLayout() {
-		params.max = params.max ?: 10
-		def docsInCollection = Collection.list(params)
-		def total= Collection.list().size()
-		
-		[docs:docsInCollection, total:total, params:params]
-		
-	}
+//	def withLayout() {
+//		params.max = params.max ?: 10
+//		def docsInCollection = Collection.list(params)
+//		def total= Collection.list().size()
+//		
+//		[docs:docsInCollection, total:total, params:params]
+//		
+//	}
 	
 	
 	

@@ -12,15 +12,15 @@
 	<div id="page-body" role="main" class="span-24">
 		<div>
 <%--			<div id="status" role="complementary" class="span-4">--%>
-<div  class="column span-4">
-				<h1>Sermo people</h1>
+<div id="status" class="column span-4">
+				<h1>Sermo team</h1>
 				<table style="width: 100%">
 
 					<g:each in="${sermo_people}" var="person" status="i">
 						<tr>
 							<td><g:link action="showPersonInfo"
 									elementId="personInfo${i}" id="${person.id}">
-									${i+1}.  ${person.lastName}, ${person.firstName}
+									  ${person.lastName}, ${person.firstName}
 								</g:link> <r:script>
 								$('#personInfo${i}').click(function() {
 									$('#person-info').load(this.href); return false;
@@ -31,7 +31,7 @@
 				</table>
 
 			</div>
-			<div id="person-info" class="column span-20 last"></div>
+			<div id="person-info" class="column span-18 last"></div>
 
 		</div>
 	</div>

@@ -59,8 +59,9 @@
 			</div>
 		</div>
 		
-		<div id ="doc-container" class="column span-18 last" >
+		<div id ="doc-container" class="column span-19 last" >
 		<div id="collection-info" >
+		  <g:render template="docs/collection-stats" model="${[noDocs:total,totalTokens:totalTokens,tokens:tokens]}"></g:render>
 		  <g:render template="docs/collection-info" model="${[docs:docs]}"></g:render>
 		 </div>
 			<div id="selected-doc" style="display:none"> </div>

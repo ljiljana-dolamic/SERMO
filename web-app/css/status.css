@@ -71,3 +71,7 @@ p {
 #page-body h1 {
 	margin-top: 0;
 }
+
+#status tr:hover {
+ 	background: #800000; 
+}

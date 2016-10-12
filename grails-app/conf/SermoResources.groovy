@@ -42,6 +42,7 @@ modules = {
 		
 		resource url : '/js/docPage-changer.js'
 		resource url: '/js/jquery/jquery.tipsy.js'
+		resource url: '/js/jquery/jquery.elevatezoom.js'
 		resource url : '/js/docPartShowChanger.js'
 	}
 

@@ -1,1 +1,3 @@
-<g:link absolute="/SERMO/">Sermo</g:link>
+<%--<g:link view="/index">Sermo</g:link>--%>
+
+<a href="${createLink(uri: '/', absolute: true)}">Sremo</a>

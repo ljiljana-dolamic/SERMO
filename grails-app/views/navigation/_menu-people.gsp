@@ -1,4 +1,4 @@
 <g:link controller ="getPeople" action="index" >
-								people
+								People
 
 							</g:link>

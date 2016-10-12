@@ -1,4 +1,4 @@
 <g:link controller ="collection" action="index" >
-								collection
+								Collection
 
 							</g:link>

@@ -96,9 +96,9 @@ img {
 
 /* GENERAL */
 
-#grailsLogo a {
+#sermoLogo a {
 	display: inline-block;
-	margin: 1em;
+		margin: 0;
 }
 
 .content h1 {
@@ -140,7 +140,7 @@ img {
 
 .nav {
 	background: hsla(40, 40%, 100%, 0.8);
-	
+	text-align:center;
 }
 
 .nav ul {
@@ -476,7 +476,7 @@ th.desc a {
 }
 
 th:hover, tr:hover {
-	background: #800000;
+/* 	background: #800000; */
 }
 
 /* PAGINATION */

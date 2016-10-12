@@ -2,13 +2,13 @@
 	<%--<g:img dir='images/people' file='LjD.png'  alt='no image' height= '400' />--%>
 	<g:each in="${pages}" var="docPage" status="i">
 		<g:if test="${docPage == 'titre'}">
-			<img id="${docId}_${docPage}_image" class="currentPageImage titre"
+			<img id="${docId}_${docPage}_image" class="currentPageImage titre titreImage"
 				src="${createLink(controller:'collection', action:'showPageImage',  params: [docId: docId, pageNo: docPage])}"
 				 />
 		</g:if>
 		<g:else>
 			<g:if test="${i == 0}">
-				<img id="${docId}_${docPage}_image" class="currentPageImage"
+				<img id="${docId}_${docPage}_image" class="currentPageImage selectedImage"
 					src="${createLink(controller:'collection', action:'showPageImage',  params: [docId: docId, pageNo: docPage])}"
 					 />
 			</g:if>
