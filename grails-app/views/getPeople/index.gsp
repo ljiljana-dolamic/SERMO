@@ -13,7 +13,7 @@
 		<div>
 <%--			<div id="status" role="complementary" class="span-4">--%>
 <div id="status" class="column span-4">
-				<h1>Sermo team</h1>
+				<h1>Équipe SERMO</h1>
 				<table style="width: 100%">
 
 					<g:each in="${sermo_people}" var="person" status="i">
