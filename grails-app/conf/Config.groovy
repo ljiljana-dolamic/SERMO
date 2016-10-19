@@ -114,7 +114,7 @@ environments {
         //grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
 		grails.config.locations=[
-			"classpath:${appName}-config.properties"
+			"classpath:${appName}-production.properties"
 		]
     }
 }

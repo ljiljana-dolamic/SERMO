@@ -14,7 +14,8 @@ body {
 	 /*  -moz-box-shadow: 0 0 0.3em #255b17;
 	-webkit-box-shadow: 0 0 0.3em #255b17;
 	        box-shadow: 0 0 0.3em #ffff00;*/
-	        
+	        min-width:1400px;
+	  overflow: scroll;   
 }
 
 
@@ -43,6 +44,8 @@ body {
 /* 	-moz-border-radius: 0.6em; */
 /* 	-webkit-border-radius: 0.6em; */
 /* 	border-radius: 0.6em; */
+min-width:1350px;
+   
 }
 
 .footer {
@@ -78,6 +81,7 @@ body {
 /* 	-webkit-border-radius: 0.6em; */
 /* 	border-radius: 0.6em; */
     width: 100%;
+    min-width:1400px;
 }
 .logo{
 	height:5vh;
@@ -109,6 +113,7 @@ background: hsla(40, 40%, 100%, 0.8);
 /* 	-webkit-border-radius: 0.6em; */
 /* 	border-radius: 0.6em; */
 /*  width: 80%; */
+min-width:1350px;
 }
 
 .bibl{
@@ -155,6 +160,7 @@ background: hsla(40, 40%, 100%, 0.8);
 /* min-height:	height:100%;  */
 font-family:"AndronScriptorWeb";
 margin-bottom: 1vh;
+
 }
 
 .container {
@@ -259,7 +265,7 @@ ul#docInfoTabs {
 .pageImage{
 	
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
 }
 
@@ -339,7 +345,7 @@ ul#docInfoTabs {
 								
 								
 .sic{
-	color: #c0c0c0;
+	color: #800080;
 	text-decoration: line-through;
 }
 .abbr{
