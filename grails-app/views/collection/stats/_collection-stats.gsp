@@ -1,6 +1,6 @@
 <div id="collection_stats">
 
-	<div class="status">
+<%--	<div class="status">--%>
 		<div class="block row">
 
 			<div class=" column span-24 last">
@@ -52,7 +52,7 @@
 
 			</div>
 		</div>
-	</div>
+<%--	</div>--%>
 
 </div>
 

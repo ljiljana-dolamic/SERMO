@@ -8,13 +8,22 @@ class CollectionStatsService {
 	
 	javax.sql.DataSource dataSource;
 	
-    Map getDocBaseStats(docId) {
+    Map docTokenCount(docId) {
 		
-		String query ="""select distinct(sub_id),section_id from token_body where  doc_id =?;""";
+		String query ="""select section_id, count(*)  from token_body  where doc_id =? group by section_id;""";
 		
 		def db = new Sql(dataSource);
 		
-		return db.rows(query, [docId]).collectEntries{ row -> [row[0],[row[1],row[2]]]}
+		return db.rows(query, [docId]).collectEntries{ row -> [row[0],row[1]]}
+    }
+	
+	Map docTagCount(docId) {
+		
+		String query ="""select tag_name, count(*) from tag_body where doc_id =? group by  tag_name; """;
+		
+		def db = new Sql(dataSource);
+		
+		return db.rows(query, [docId]).collectEntries{ row -> [row[0],row[1]]}
     }
 	
 	Map getCollBaseStats() {

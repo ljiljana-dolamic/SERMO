@@ -6,6 +6,12 @@ class Collection {
 	String authorLastName
 	String docName
 	int editionYear
+	String sermonYear
+	String place
+	String publisher
+	String genre
+	String titleBook
+	String titleSermon
 	
 	static mapping = {
 		version false
@@ -15,6 +21,12 @@ class Collection {
 		authorLastName column: 'author_last_name'
 		docName column: 'doc_name'
 		editionYear column: 'edition_year', sqlType:'smallint'
+		sermonYear column: 'sermon_date'
+		titleBook column: 'title_book'
+		titleSermon column: 'title_sermon'
+		genre column: 'genre'
+		place  column:'place'
+		publisher  column: 'publisher'
 	}
 
     static constraints = {

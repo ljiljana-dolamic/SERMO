@@ -3,7 +3,7 @@
 		<div class="status">
 		 <div class= "block row">
 			<div class="titleImageThumb column span-4">
-				<g:render template="docs/thumb/titleImageThumb" model="${[doc:doc]}"></g:render>
+				<g:render template="docs/thumb/titleImageThumb" model="${[doc:doc,i:i]}"></g:render>
 			</div>
 			<div class=" column span-20 last">
 
@@ -29,7 +29,7 @@
 
 						<td class="column span-5">Titre de recueil :</td>
 						<td class="column span-16 last">
-							${doc.docName}
+							${doc.titleBook}
 						</td>
 
 					</tr>

@@ -134,6 +134,11 @@ class DocumentDisplayService {
 									noteContent.append("<span class=\"bibl\" >");
 
 								}else{
+//								 if (parser.getAttributeValue(null, "type").equals("bible")){
+//									 String imageLink= getImageLink("titre");
+//									 sb.append("<a  class=\"imageBibl\" herf=").append(getImageLink()).append(">");
+//									 }//**********to do add link to a bible**3/
+									 
 									sb.append("<span class=\"bibl\" >");
 									currentTagStack.addFirst("<span class=\"bibl\" >");
 									currentTagToCloseStack.addFirst("</span>");
@@ -194,7 +199,7 @@ class DocumentDisplayService {
 
 								String n = parser.getAttributeValue(null, "n")
 								sb.append("<div class=\"p\" id=\""+ n+"\">");
-								sb.append("<span class=\"par\">[§"+n+"]</span>");
+//								sb.append("<span class=\"par\">[§"+n+"]</span>");
 								currentTagStack.addFirst("<div class=\"p\" id=\""+ n+"\">");
 								currentTagToCloseStack.addFirst("</div>");
 
@@ -202,12 +207,12 @@ class DocumentDisplayService {
 
 							case "q":
 								if(flagNote){
-									noteContent.append("<div class=\"q\" style=\"color:gray\" >");
+									noteContent.append("<span class=\"q\" style=\"color:gray\" >");
 
 								}else{
-									sb.append("<div class=\"q\" style=\"color:gray\" >");
-									currentTagStack.addFirst("<div class=\"q\" style=\"color:gray\" >");
-									currentTagToCloseStack.addFirst("</div>");
+									sb.append("<span class=\"q\" style=\"color:gray\" >");
+									currentTagStack.addFirst("<span class=\"q\" style=\"color:gray\" >");
+									currentTagToCloseStack.addFirst("</span>");
 								}
 								break;
 
@@ -276,6 +281,12 @@ class DocumentDisplayService {
 								sb.append("<br/><span class=\"catchWord\" >[");
 								break;
 
+							case "c":
+							if (parser.getAttributeValue(null,"type").equals("lettrine")) {
+								sb.append("<span class=\"lettrine\" >");
+								}
+							
+								break;
 
 							case "milestone":
 
@@ -410,7 +421,7 @@ class DocumentDisplayService {
 
 							case "q":
 								if(flagNote){
-									noteContent.append("</div>");
+									noteContent.append("</span>");
 								}else{
 									sb.append(currentTagToCloseStack.removeFirst());
 									currentTagStack.removeFirst();
@@ -420,7 +431,11 @@ class DocumentDisplayService {
 							case "fw":
 								sb.append("]</span>");
 								break;
-
+								
+							case "c":
+								sb.append("</span>");
+								break;
+								
 							case "bibl":
 							case "quote":
 								if(flagNote){

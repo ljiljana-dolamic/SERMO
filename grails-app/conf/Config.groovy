@@ -32,6 +32,8 @@ grails.mime.types = [ // the first one is the default format
     xml:           ['text/xml', 'application/xml']
 ]
 
+//Ljiljana: id with dots
+grails.mime.file.extensions = false
 // URL Mapping Cache Max Size, defaults to 5000
 //grails.urlmapping.cache.maxsize = 1000
 
@@ -115,6 +117,7 @@ environments {
         // TODO: grails.serverURL = "http://www.changeme.com"
 		grails.config.locations=[
 			"classpath:${appName}-production.properties"
+			//"classpath:SERMO-production.properties"
 		]
     }
 }

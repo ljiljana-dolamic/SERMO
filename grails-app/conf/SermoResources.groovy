@@ -36,6 +36,7 @@ modules = {
 //		defaultBundle 'core'
 		
 		resource url: '/css/sermo/sermo.css'
+		resource url: '/css/sermo/navMenu.css'
 		resource url: '/css/main.css'
 		resource url: '/css/status.css'
 		resource url: '/css/tipsy/tipsy.css'

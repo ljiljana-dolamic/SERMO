@@ -20,8 +20,7 @@ environments {
         dataSource {
             dbCreate = "validate" // one of 'create', 'create-drop', 'update', 'validate', ''
 			//url= "jdbc:mysql://localhost/mydb?useUnicode=yes&characterEncoding=UTF-8"
-		//	username="root"
-		//	password="v1707n3010D!"
+		
           
         }
     }
@@ -33,7 +32,12 @@ environments {
     }
     production {
         dataSource {
-            dbCreate = "update"
+			grails.config.locations=[
+				"classpath:application.properties"
+			]
+			driverClassName = "com.mysql.jdbc.Driver"
+			dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
+            dbCreate = "validate"
            
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation

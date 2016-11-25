@@ -86,10 +86,10 @@ min-width:1350px;
 .logo{
 	height:5vh;
 }
-.header {
+#header {
 
 /* background: url(../../images/sermo/old-paper.png) no-repeat center center fixed; */
-background: hsla(40, 40%, 100%, 0.8);
+/* background: hsla(40, 40%, 100%, 0.8); */
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
@@ -97,12 +97,15 @@ background: hsla(40, 40%, 100%, 0.8);
 
 	clear: both;
 
-	margin-top:0;
-	padding: 0.8em;
+	margin-top:1em;
+	padding: 1em;
 
 	height:5vh;
-
-	border: .1em solid #400000;
+ display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+/* 	border: .1em solid #400000; */
 	margin-left: 1em;
 	margin-right: 1em;
 
@@ -156,6 +159,7 @@ min-width:1350px;
   justify-content: center;
 /*  min-height:100vh;  */
 }
+
 #doc-container {
 /* min-height:	height:100%;  */
 font-family:"AndronScriptorWeb";
@@ -209,6 +213,8 @@ margin-bottom: 1vh;
 	
 	
 }
+
+/*DOC INFO*/
 #docInfoTabs{
 	
 	display: flex;
@@ -233,8 +239,10 @@ ul#docInfoTabs > li.selected {
 }
 
 ul#docInfoTabs > li:hover {
-    color: #000000;
-    background-color: #800000; 
+   background-color: #999999;
+	background: hsla(40, 40%, 100%, 0.8);
+	outline: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
 ul#docInfoTabs {
@@ -244,7 +252,7 @@ ul#docInfoTabs {
 
 .status {
 
-	border: .1em solid #400000;
+/* 	border: .1em solid #400000; */
 	margin: 1em 1em 1em;
 	padding: .25em;
 /* 	width: 12em; */
@@ -300,12 +308,62 @@ ul#docInfoTabs {
   justify-content: center;
 }
 
-.navigation-bar{
-	
-	float:right;
+/* NAVIGATION MENU */
+#navigation-bar{
+	margin-left: 1em;
+	margin-right: 1em;
+/* 	display:block; */
+/*  	float:left;  */
+min-width:1350px;
+
 }
 
 
+
+.nav {
+	background: hsla(40, 40%, 100%, 0.8);
+	text-align:center;
+}
+
+.nav ul {
+	overflow: hidden;
+	padding: 0;
+	padding-left: 0;
+	margin: 0;
+	zoom: 1;
+}
+
+.nav li {
+	display: block;
+	float: left;
+	list-style-type: none;
+/* 	margin-right: 0.5em; */
+	padding: 0;
+}
+
+.nav a {
+	color: #666666;
+	display: block;
+	padding: 0.25em 0.7em;
+	text-decoration: none;
+	   -moz-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+	        border-radius: 0.3em;
+}
+
+.nav a:active, .nav a:visited {
+	color: #666666;
+}
+
+.nav a:focus, .nav a:hover {
+	background-color: #999999;
+	background: hsla(40, 40%, 100%, 0.8);
+	outline: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+
+/*DOC DISPLAY*/
 .par{
 	color: #696969;
 	font-weight: normal;
@@ -353,5 +411,20 @@ ul#docInfoTabs {
 	
 }
 
+#collection_stats{
+margin: 1em 1em 1em;
+	padding: .25em;
+/* 	width: 12em; */
+/*  	float: left;  */
+	-moz-box-shadow: 0px 0px 1.25em #ccc;
+	-webkit-box-shadow: 0px 0px 1.25em #ccc;
+	box-shadow: 0px 0px 1.25em #ccc;
+	font-weight: bold;	
+}
 
+
+.lettrine{
+	
+	font-size:150%;
+}
 @font-face { font-family: AndronScriptorWeb; src: url('../../font/Andron Scriptor Web.ttf'); } 

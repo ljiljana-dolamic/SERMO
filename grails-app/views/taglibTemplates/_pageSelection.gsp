@@ -3,7 +3,7 @@
 
 <%--		<div class="column span-2 prepend-6">--%>
 		<div class="selectPageNav">
-			<button id="prevPage" onclick="previousPage()">Prev</button>
+			<button id="prevPage" onclick="previousPage()">Précedente</button>
 		</div>
 <%--		<div class="column span-6">--%>
 <div class="selectPageNav">
@@ -30,7 +30,7 @@
 
 <%--		<div class="column span-2 append-6 last">--%>
 		<div class="selectPageNav">
-			<button id="nextPage" onclick="nextPage()">Next</button>
+			<button id="nextPage" onclick="nextPage()">Suivante</button>
 			
 	</div>	
 	
