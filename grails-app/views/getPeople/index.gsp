@@ -10,9 +10,8 @@
 </head>
 <body>
 	<div id="page-body" role="main" class="span-24">
-		<div>
-<%--			<div id="status" role="complementary" class="span-4">--%>
-<div id="status" class="column span-4">
+		
+			<div id="status" class="column span-4">
 				<h1>Équipe SERMO</h1>
 				<table style="width: 100%">
 
@@ -20,7 +19,7 @@
 						<tr>
 							<td><g:link action="showPersonInfo"
 									elementId="personInfo${i}" id="${person.id}">
-									  ${person.lastName}, ${person.firstName}
+									${person.lastName}, ${person.firstName}
 								</g:link> <r:script>
 								$('#personInfo${i}').click(function() {
 									$('#person-info').load(this.href); return false;
@@ -31,9 +30,15 @@
 				</table>
 
 			</div>
-			<div id="person-info" class="column span-18 last"></div>
+			<div id = "equipe" class="column span-18 last">
+				
+					<g:img dir='images/people' file="equipe.PNG" alt='no image' />
+			</div>
+				
+<%--				<div id="person-info" class="column span-18 last"></div>--%>
+				<div id="person-info" ></div>
 
-		</div>
+			
 	</div>
 
 	<r:layoutResources />

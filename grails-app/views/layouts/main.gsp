@@ -20,29 +20,30 @@
 
 <g:javascript library="jquery" />
 
-<g:layoutHead/>
+<g:layoutHead />
 
 <r:require module="sermo" />
 
-<r:layoutResources/>
+<r:layoutResources />
 
 </head>
 <body>
-	<div class="content" >
+<%--<g:render template="/header/header" />--%>
+	<div class="content">
 		<g:render template="/header/header" />
-<%--		<div class="navigation-bar container">--%>
-<%--			<div class="nav column span-5 status">--%>
-<%--				<g:render template="/navigation/menu-about" />--%>
-<%--			</div>--%>
-<%--			<div class="nav column span-5 status">--%>
-<%--				<g:render template="/navigation/menu-people" />--%>
-<%--			</div>--%>
-<%--			<div class=" nav column span-5 status">--%>
-<%--				<g:render template="/navigation/menu-collection" />--%>
-<%--			</div>--%>
-<%--			--%>
-<%--		</div>--%>
-		<div id="sermoBg" class="container" >
+		<%--		<div class="navigation-bar container">--%>
+		<%--			<div class="nav column span-5 status">--%>
+		<%--				<g:render template="/navigation/menu-about" />--%>
+		<%--			</div>--%>
+		<%--			<div class="nav column span-5 status">--%>
+		<%--				<g:render template="/navigation/menu-people" />--%>
+		<%--			</div>--%>
+		<%--			<div class=" nav column span-5 status">--%>
+		<%--				<g:render template="/navigation/menu-collection" />--%>
+		<%--			</div>--%>
+		<%--			--%>
+		<%--		</div>--%>
+		<div id="sermoBg" class="container">
 
 
 
@@ -50,17 +51,19 @@
 
 
 		</div>
-		
-	
 
+
+
+<%--		<div id="bottomContent">--%>
+<%--			<g:render template="/footer/footer" />--%>
+<%--		</div>--%>
+	</div>
 <div id="bottomContent">
-		<g:render template="/footer/footer" />
+			<g:render template="/footer/footer" />
 		</div>
-</div>
+	<r:require module="sermo" />
 
-<r:require module="sermo" />
-
-<r:layoutResources/>
+	<r:layoutResources />
 </body>
 
 </html>

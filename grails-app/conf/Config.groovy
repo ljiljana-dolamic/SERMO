@@ -12,7 +12,7 @@
 // }
 grails.views.javascript.library="jquery"
 
-grails.project.groupId = SERMO // change this to alter the default package name and Maven publishing destination
+grails.project.groupId = 'ch.unine.ilcf.SERMO' // change this to alter the default package name and Maven publishing destination
 
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
 grails.mime.disable.accept.header.userAgents = ['Gecko', 'WebKit', 'Presto', 'Trident']
@@ -42,7 +42,7 @@ grails.views.default.codec = "html"
 
 // The default scope for controllers. May be prototype, session or singleton.
 // If unspecified, controllers are prototype scoped.
-grails.controllers.defaultScope = 'singleton'
+//grails.controllers.defaultScope = 'singleton'
 
 // GSP settings
 grails {
@@ -61,7 +61,12 @@ grails {
         // filteringCodecForContentType.'text/html' = 'html'
     }
 }
-
+// ljiljana: deployment problem
+//grails.war.dependencies = [
+//	"grails-plugin-testing-2.4.4.jar",
+//	"grails-test-2.4.4.jar",
+//	"grails-test-suite-base-2.4.4.jar"
+//]
 
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
@@ -116,8 +121,9 @@ environments {
         //grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
 		grails.config.locations=[
-			"classpath:${appName}-production.properties"
+			"classpath:${appName}-config.properties"
 			//"classpath:SERMO-production.properties"
+			//"file:SERMO-config.properties"
 		]
     }
 }

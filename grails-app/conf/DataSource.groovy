@@ -1,9 +1,9 @@
 dataSource {
     pooled = true
-    jmxExport = true
-    driverClassName = "com.mysql.jdbc.Driver"
-    username = "sa"
-    password = ""
+   // jmxExport = true
+  //  driverClassName = "com.mysql.jdbc.Driver"
+  //  username = "sa"
+  //  password = ""
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -20,7 +20,8 @@ environments {
         dataSource {
             dbCreate = "validate" // one of 'create', 'create-drop', 'update', 'validate', ''
 			//url= "jdbc:mysql://localhost/mydb?useUnicode=yes&characterEncoding=UTF-8"
-		
+			driverClassName = "com.mysql.jdbc.Driver"
+			dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
           
         }
     }
@@ -32,12 +33,15 @@ environments {
     }
     production {
         dataSource {
+			
 			grails.config.locations=[
 				"classpath:application.properties"
 			]
 			driverClassName = "com.mysql.jdbc.Driver"
 			dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
-            dbCreate = "validate"
+            dbCreate = ""
+			url= "jdbc:mysql://127.0.0.1:3306/mydb?useUnicode=yes&characterEncoding=UTF-8"
+			
            
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation

@@ -1,6 +1,6 @@
 <%--<div id="${person.id}" class="person span-20">--%>
 <div class="person block">
-	<divclass = "blockrow">
+	<div class = "blockrow">
 	<div class="column span-6">
 		<g:img dir='images/people' file="${person.id}.png" height="200"
 			alt='no image' />

@@ -63,10 +63,10 @@ min-width:1350px;
 
 	margin-top: 1.5em;
 	padding: 0.8em;
-	height: 10vh;
-	position: fixed;
+	height: 5vh;
+/* 	position: fixed; */
     bottom: 0;
-    overflow-x:hidden;
+/*     overflow-x:hidden; */
     
 /*     border: .1em solid #400000; */
 /* 	margin-left: 1em; */
@@ -81,7 +81,7 @@ min-width:1350px;
 /* 	-webkit-border-radius: 0.6em; */
 /* 	border-radius: 0.6em; */
     width: 100%;
-    min-width:1400px;
+    min-width:1350px;
 }
 .logo{
 	height:5vh;
@@ -265,6 +265,30 @@ ul#docInfoTabs {
 /* 	border-radius: 0.6em; */
 }
 
+
+#equipe {
+
+/* 	border: .1em solid #400000; */
+	margin: 1em 0em 1em 1em;
+	padding: 0em 1em;
+/* 	width: 12em; */
+/*  	float: left;  */
+/* 	-moz-box-shadow: 0px 0px 1.25em #ccc; */
+/* 	-webkit-box-shadow: 0px 0px 1.25em #ccc; */
+/* 	box-shadow: 0px 0px 1.25em #ccc; */
+/* 	-moz-border-radius: 0.6em; */
+/* 	-webkit-border-radius: 0.6em; */
+/* 	border-radius: 0.6em; */
+display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+#person-info{
+	margin: 1em 1em 1em;
+	padding: 1em;
+	
+}
 .imageThumb{
 	width:80%;
 	
@@ -312,6 +336,9 @@ ul#docInfoTabs {
 #navigation-bar{
 	margin-left: 1em;
 	margin-right: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	background: hsla(40, 40%, 100%, 0.8);
 /* 	display:block; */
 /*  	float:left;  */
 min-width:1350px;
@@ -321,7 +348,7 @@ min-width:1350px;
 
 
 .nav {
-	background: hsla(40, 40%, 100%, 0.8);
+/* 	background: hsla(40, 40%, 100%, 0.8); */
 	text-align:center;
 }
 
@@ -346,9 +373,9 @@ min-width:1350px;
 	display: block;
 	padding: 0.25em 0.7em;
 	text-decoration: none;
-	   -moz-border-radius: 0.3em;
-	-webkit-border-radius: 0.3em;
-	        border-radius: 0.3em;
+/* 	   -moz-border-radius: 0.3em; */
+/* 	-webkit-border-radius: 0.3em; */
+/* 	        border-radius: 0.3em; */
 }
 
 .nav a:active, .nav a:visited {
@@ -356,8 +383,8 @@ min-width:1350px;
 }
 
 .nav a:focus, .nav a:hover {
-	background-color: #999999;
-	background: hsla(40, 40%, 100%, 0.8);
+/* 	background-color: #999999; */
+/* 	background: hsla(40, 40%, 100%, 0.8); */
 	outline: none;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
@@ -427,4 +454,4 @@ margin: 1em 1em 1em;
 	
 	font-size:150%;
 }
-@font-face { font-family: AndronScriptorWeb; src: url('../../font/Andron Scriptor Web.ttf'); } 
+@font-face { font-family: AndronScriptorWeb; src: url('../../font/AndronScriptorWeb.ttf'); } 
