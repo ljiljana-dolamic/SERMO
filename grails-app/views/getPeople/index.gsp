@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="layout" content="main" />
+<%--<!DOCTYPE html>--%>
+<%--<html>--%>
+<%--<head>--%>
+<%--<meta name="layout" content="main" />--%>
 <title>SERMO|People</title>
-<r:require modules="sermo" />
-<g:javascript library="jquery" />
+<g:applyLayout name="main">
 
-<r:layoutResources />
-</head>
-<body>
-	<div id="page-body" role="main" class="span-24">
+	
 		
-			<div id="status" class="column span-4">
+<%--			<div id="status" class="columne span-4">--%>
+				<div  class="column span-5">
 				<h1>Équipe SERMO</h1>
 				<table style="width: 100%">
 
@@ -30,17 +27,20 @@
 				</table>
 
 			</div>
-			<div id = "equipe" class="column span-18 last">
+			<div id = "equipe" class="column span-14 ">
 				
 					<g:img dir='images/people' file="equipe.PNG" alt='no image' />
+					
+	<%--					<div id="person-info" class="column span-18 last"></div>--%>
+				<div id="person-info" ></div>
+					
 			</div>
 				
-<%--				<div id="person-info" class="column span-18 last"></div>--%>
-				<div id="person-info" ></div>
-
 			
-	</div>
+				
+   <div class="column span-4 last">
+</div>
+			
 
-	<r:layoutResources />
-</body>
-</html>
+
+</g:applyLayout>

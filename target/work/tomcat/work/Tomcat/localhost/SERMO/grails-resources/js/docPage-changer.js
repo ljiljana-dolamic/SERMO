@@ -60,9 +60,9 @@ function changePage(val){
 }
 
 function showPage(val){
-	
+	var e_val= CSS.escape(val);
 	$(".pageBreak").hide();   
-	$("#"+val).show();
+	$("#"+e_val).show();
 	$(".currentPageImage").hide();
 	var image = $(".selectedImage");
 //	$(".currentPageImage").removeClass("selectedImage");
@@ -71,8 +71,8 @@ function showPage(val){
 
     $('.zoomContainer').remove();// remove zoom container from DOM
     image.removeClass("selectedImage");
-	$("#"+val+"_image").addClass("selectedImage");
-	$("#"+val+"_image").show();
+	$("#"+e_val+"_image").addClass("selectedImage");
+	$("#"+e_val+"_image").show();
 }
 
 function loadTipsy(){
@@ -92,3 +92,4 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.height = "0%";
 }
+

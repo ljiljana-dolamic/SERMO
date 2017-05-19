@@ -39,8 +39,20 @@ class CollectionStatsService {
 			totalCount+=tCount;
 			
 		}
-		
+		db.eachRow(query) { row ->
+			def tCount=row[0];
+			noTokens[row[1]]= tCount;
+			totalCount+=tCount;
+			
+		}
 		[totalCount : totalCount,
 			noTokens : noTokens]
+    }
+	
+	def getCountbyAuthor() {
+		def query =""" select author_first_name,author_last_name,count(author_first_name) from documents_info group by author_first_name,author_last_name;""";
+		def db = new Sql(dataSource);
+		
+		return db.rows(query)
     }
 }

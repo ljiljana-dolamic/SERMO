@@ -54,6 +54,7 @@ class DocumentDisplayService {
 
 		boolean flagNote = false;
 		int noteType= 0; //1- margin;2-foot
+		boolean leftNote=true;
 		boolean flagChoice = false;
 		boolean flagSic = false;
 		boolean flagCorr = false;
@@ -61,7 +62,7 @@ class DocumentDisplayService {
 		String choiceCorr="";
 		boolean start = false;
 		StringBuilder noteContent = new StringBuilder();
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new StringBuilder();		
 		String localname = "";
 		String headType="";
 		Deque<String> noteCurrentTagStack = new LinkedList<String>();
@@ -84,13 +85,17 @@ class DocumentDisplayService {
 						start=true;
 					}}
 			}else{
-
 				switch (event) {
+					
 					case XMLStreamConstants.START_ELEMENT:
 						localname = parser.getLocalName();
+						if( !localname.equals("note")
+												&& !flagNote
+												){
+											leftNote=false;
+											
+											}
 						switch (localname) {
-
-
 							case "choice":
 								flagChoice=true;
 								choiceSic="";
@@ -130,29 +135,50 @@ class DocumentDisplayService {
 								}
 								break;
 							case "bibl":
+							 StringBuilder tmpSpan=new StringBuilder();
+							 tmpSpan.append("<span class=\"bibl\" ");
+							 if (parser.getAttributeValue(null, "source") != null) {
+								 tmpSpan.append("onclick=\"openBiblVers(").append(parser.getAttributeValue(null, "source")).append("\")");
+							 }
+							 
+							tmpSpan.append(" >");
 								if(flagNote){
-									noteContent.append("<span class=\"bibl\" >");
-
+//									noteContent.append("<span class=\"bibl\" ");
+//									if (parser.getAttributeValue(null, "source") != null) {
+//										noteContent.append("onclick=\"openNav(parser.getAttributeValue(null, \"source\"))\"");
+//									}
+//									
+//									noteContent.append(" >");
+									noteContent.append(tmpSpan.toString())
 								}else{
-//								 if (parser.getAttributeValue(null, "type").equals("bible")){
-//									 String imageLink= getImageLink("titre");
-//									 sb.append("<a  class=\"imageBibl\" herf=").append(getImageLink()).append(">");
-//									 }//**********to do add link to a bible**3/
-									 
-									sb.append("<span class=\"bibl\" >");
-									currentTagStack.addFirst("<span class=\"bibl\" >");
-									currentTagToCloseStack.addFirst("</span>");
+								sb.append(tmpSpan.toString());
+								currentTagStack.addFirst(tmpSpan.toString());
+								currentTagToCloseStack.addFirst("</span>");
+//									 
+//									sb.append("<span class=\"bibl\" >");
+//									currentTagStack.addFirst("<span class=\"bibl\" >");
+//									currentTagToCloseStack.addFirst("</span>");
 								}
 								break;
 
 							case "quote":
+							StringBuilder tmpSpanQ=new StringBuilder();
+							tmpSpanQ.append("<span class=\"quote\" ");
+							if (parser.getAttributeValue(null, "source") != null) {
+								tmpSpanQ.append("onclick=\"openBiblVers(").append(parser.getAttributeValue(null, "source")).append("\")");
+							}
+							
+						   tmpSpanQ.append(" >");
 								if(flagNote){
-									noteContent.append("<span class=\"quote\" >");
-
+									//noteContent.append("<span class=\"quote\" >");
+									noteContent.append(tmpSpanQ.toString())
 								}else{
-									sb.append("<span class=\"quote\" >");
-									currentTagStack.addFirst("<span class=\"quote\" >");
-									currentTagToCloseStack.addFirst("</span>");
+								sb.append(tmpSpanQ.toString());
+								currentTagStack.addFirst(tmpSpanQ.toString());
+								currentTagToCloseStack.addFirst("</span>");
+//									sb.append("<span class=\"quote\" >");
+//									currentTagStack.addFirst("<span class=\"quote\" >");
+//									currentTagToCloseStack.addFirst("</span>");
 								}
 								break;
 
@@ -160,6 +186,7 @@ class DocumentDisplayService {
 							case "note":
 								flagNote = true;
 								String t;
+								noteContent.setLength(0);
 								if (parser.getAttributeValue(null, "type") != null) {
 								 t = parser.getAttributeValue(null, "type");
 								}else{
@@ -169,10 +196,13 @@ class DocumentDisplayService {
 									noteType=1;
 								}else if(t.equals("foot")){
 									noteType=2;
+									if (parser.getAttributeValue(null, "n") != null) {
+										noteContent.append(parser.getAttributeValue(null, "n"));
+									}
 								}else{
 									noteType=3;
 								}
-								noteContent.setLength(0);
+								
 
 								break;
 
@@ -198,9 +228,9 @@ class DocumentDisplayService {
 							case "p":
 
 								String n = parser.getAttributeValue(null, "n")
-								sb.append("<div class=\"p\" id=\""+ n+"\">");
+								sb.append("<div class=\"par\" id=\""+ n+"\">");
 //								sb.append("<span class=\"par\">[§"+n+"]</span>");
-								currentTagStack.addFirst("<div class=\"p\" id=\""+ n+"\">");
+								currentTagStack.addFirst("<div class=\"par\" id=\""+ n+"\">");
 								currentTagToCloseStack.addFirst("</div>");
 
 								break;
@@ -274,7 +304,10 @@ class DocumentDisplayService {
 									//	 noteCurrentTagToCloseStack.addFirst("</span>");
 								}else{
 									sb.append("<br/>")
+									leftNote=true;
+									
 								}
+								
 								break;
 
 							case "fw":
@@ -399,8 +432,14 @@ class DocumentDisplayService {
 
 								if (noteContent.length() > 0) {
 									if(noteType==1){
-										sb.append("<span class=\"note margin\"  title='").append(noteContent.toString()).append("'>");
-										sb.append("[*]").append("</span>");
+										if(leftNote){
+											sb.append("<span class=\"note margin-left\" '>");
+										}else{
+											sb.append("<span class=\"note margin-right\" '>");
+										}
+										//sb.append("<span class=\"note margin\"  title='").append(noteContent.toString()).append("'>");
+										//sb.append("[*]").append("</span>");
+										sb.append(noteContent.toString()).append("</span>");
 									}else if(noteType==2){
 										sb.append("<div class=\"note foot\" >" ).append(noteContent.toString()).append("</div>");
 									}else{
@@ -415,7 +454,7 @@ class DocumentDisplayService {
 							case "p":
 								sb.append(currentTagToCloseStack.removeFirst());
 								currentTagStack.removeFirst();
-							//	sb.append("</div>").append("<br/>");
+								//sb.append("</div>").append("<br/>");
 								sb.append("<br/>");
 								break;
 
@@ -449,14 +488,18 @@ class DocumentDisplayService {
 						}
 						break;
 					case XMLStreamConstants.CHARACTERS:
+					if( !flagNote && parser.getText().replaceAll("\\s+", "").length() > 0){
+						leftNote=false;
+						
+					}
 						if (flagNote && parser.getText().length() > 0) {
 							noteContent.append(parser.getText().replace("'", "&apos;"));
 						}else if(flagChoice && flagSic && parser.getText().length() > 0){
-							choiceSic += parser.getText();
+							choiceSic += parser.getText().replaceAll("\\s+", " ");
 						}else if(flagChoice && flagCorr && parser.getText().length() > 0){
-							choiceCorr += parser.getText();
+							choiceCorr += parser.getText().replaceAll("\\s+", " ");
 						}else{
-							sb.append(parser.getText().replace("\n", " "));
+							sb.append(parser.getText().replace("\n", " ").replaceAll("\\s+", " "));
 						}
 						break;
 				}

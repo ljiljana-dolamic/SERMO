@@ -2,6 +2,7 @@
 body,
 input, select, textarea {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 12px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,6 +23,7 @@ html {
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
+	        
 }
 
 html.no-cssgradients {

@@ -28,9 +28,9 @@
 
 </head>
 <body>
-<%--<g:render template="/header/header" />--%>
-	<div class="content">
-		<g:render template="/header/header" />
+<g:render template="/header/header" />
+	<div class="content  block">
+		<%--<g:render template="/header/header" />--%>
 		<%--		<div class="navigation-bar container">--%>
 		<%--			<div class="nav column span-5 status">--%>
 		<%--				<g:render template="/navigation/menu-about" />--%>
@@ -43,14 +43,14 @@
 		<%--			</div>--%>
 		<%--			--%>
 		<%--		</div>--%>
-		<div id="sermoBg" class="container">
+<%--		<div id="sermoBg" class="container">--%>
 
 
 
 			<g:layoutBody />
 
 
-		</div>
+<%--		</div>--%>
 
 
 
