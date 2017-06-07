@@ -1,6 +1,6 @@
 <div id="collection_info">
 	<g:each in="${docs}" var="doc" status="i">
-		<div class="status">
+		<div class="status" id="${doc.id}_status">
 		 <div class= "block row">
 			<div class="titleImageThumb column span-4">
 				<g:render template="docs/thumb/titleImageThumb" model="${[doc:doc,i:i]}"></g:render>

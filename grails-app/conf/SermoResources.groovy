@@ -34,7 +34,7 @@ modules = {
 		dependsOn 'jquery'
 		
 //		defaultBundle 'core'
-		
+		resource url: '/css/sermo/filters.css'
 		resource url: '/css/sermo/sermo.css'
 		resource url: '/css/sermo/navMenu.css'
 		resource url: '/css/main.css'
@@ -42,6 +42,7 @@ modules = {
 		resource url: '/css/tipsy/tipsy.css'
 		
 		resource url : '/js/docPage-changer.js'
+		resource url : '/js/filterShowHide.js'
 		resource url: '/js/jquery/jquery.tipsy.js'
 		resource url: '/js/jquery/jquery.elevatezoom.js'
 		resource url : '/js/docPartShowChanger.js'

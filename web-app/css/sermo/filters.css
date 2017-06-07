@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+/* TABLES */
+
+.filters table {
+/* 	border-top: 1px solid #DFDFDF; */
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+.filters tr {
+	border: 0;
+}
+
+.filters td {
+	padding: 0;
+}
+.filters ul {
+	margin-top: 2em;
+}
+
+.filters_menu{
+	
+	margin-top: 2em;
+}
+.filters_list{
+	
+	margin-left: 2em;
+}

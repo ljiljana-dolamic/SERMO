@@ -50,7 +50,21 @@ class CollectionStatsService {
     }
 	
 	def getCountbyAuthor() {
-		def query =""" select author_first_name,author_last_name,count(author_first_name) from documents_info group by author_first_name,author_last_name;""";
+		def query =""" select author_first_name,author_last_name,count(author_first_name) from documents_info group by author_first_name,author_last_name order by author_last_name;""";
+		def db = new Sql(dataSource);
+		
+		return db.rows(query)
+    }
+	
+	def getCountbyPubPlace() {
+		def query =""" select place,count(place) from documents_info group by place order by place;""";
+		def db = new Sql(dataSource);
+		
+		return db.rows(query)
+    }
+	
+	def getCountbyDecade() {
+		def query =""" select edition_year,count(edition_year) from documents_info group by edition_year;""";
 		def db = new Sql(dataSource);
 		
 		return db.rows(query)

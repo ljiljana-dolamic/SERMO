@@ -14,8 +14,8 @@
 <g:applyLayout name="main">
 <title>SERMO|Collection</title>
 <div class="column span-5">
-<g:include controller="filters" action="countByAuthor"/>
-<%--<g:render template="/filters/filters"></g:render>--%>
+<%--<g:include controller="filters" action="countByAuthor"/>--%>
+<g:render template="filters/filters"></g:render>
 </div>
 <div class=" column span-14">
 
@@ -32,8 +32,8 @@
 							</g:link> 
 							<r:script>
 								$('#docInfo${i}').click(function() {
-
-<%--									$('#selected-doc').load(this.href,function(){loadTipsy();});--%>
+$('#selected-doc').load(this.href);
+<%--								$('#selected-doc').load(this.href,function(){loadTipsy();});--%>
 									$('#collection-info').hide();	
 									$('#selected-doc').show();
 									closeNav();					

@@ -5,7 +5,7 @@ import ch.unine.ILCF.SERMO.DocumentDisplayService;
 import ch.unine.ILCF.SERMO.statistics.CollectionStatsService;
 
 
-class CollectionController {
+class CollectionController extends SermoAbstractController{
 	
 	DocumentDisplayService documentDisplayService
 	
@@ -15,8 +15,9 @@ class CollectionController {
     def index() {
 		params.max = params.max ?: 10
 		def docsInCollection = Collection.list(params)
+	
 		def total= Collection.list().size()
-		
+		//System.out.println(params);
 		
 		Map result = collectionStatsService.getCollBaseStats();
 	
