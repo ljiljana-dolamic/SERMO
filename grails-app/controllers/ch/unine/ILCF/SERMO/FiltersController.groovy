@@ -4,15 +4,17 @@ import ch.unine.ILCF.SERMO.statistics.CollectionStatsService;
 import ch.unine.ILCF.SERMO.filter.FilterService;
 
 
-class FiltersController extends SermoAbstractController {
+class FiltersController  {
 	CollectionStatsService collectionStatsService
 	FilterService filterService
     def index() { }
 	
 	def countByAuthor = {
 		def result = collectionStatsService.getCountbyAuthor();
+		def filter = params.filter;
+//		params.remove('filter')
 		[
-			count:result.size() ,countByAuthor:result
+			count:result.size() ,countByAuthor:result, filter: filter
 		]
 	}
 	
@@ -23,24 +25,51 @@ class FiltersController extends SermoAbstractController {
 		]
 	}
 	
+	def countByDecade = {
+		def result = collectionStatsService.getCountbyDecade();
+		
+		[
+			count:result.size() ,countByDecade:result
+		]
+	}
+	
+	def countByGenre = {
+		def result = collectionStatsService.getCountbyGenre();
+		[
+			count:result.size() ,countByGenre:result
+		]
+	}
+	
 	def addAuthorToFilter = {
-		def fd = filterService.getFilterDocsList(params.first_name,params.last_name) ;
-	//	def fd;
-//		if(null == session.getAttribute(filteredDocs)){
-		if(session["filteredDocs"].equals(null)){
-			System.out.println("session fd is null");}
-		//	def fd = ['_1561_Jean_Calvin_CiM'].toSet();
-//		 
-//		} else {
-//		fd = session.getAttribute(filteredDocs);
-		//fd.add('_1561_Jean_Calvin_CiM');
-	//	}
-		session["filteredDocs"] = fd
-		Map author=[:];
-	    author= params;
-		System.out.println(session);
-	 //   System.out.println(session.filteredDocs)
-//		[ aC:author.first_name
-//			]
+		def first_name= params.first_name;
+		def last_name= params.last_name;
+		
+		
+		redirect(controller:'collection', params:[first_name:first_name,last_name:last_name])
+	
+	}
+	def addEditionPlaceFilter = {
+		def ep= params.place_edition;
+		
+		
+		redirect(controller:'collection', params:[place_edition:ep])
+	
+	}
+	def addDecadeToFilter = {
+		def dc= params.start;
+		def de= params.end;
+		
+		
+		
+		redirect(controller:'collection', params:[decade_start:dc,decade_end:de ])
+	
+	}
+	def addGenreToFilter = {
+		def genre= params.genre;
+		
+		
+		
+		redirect(controller:'collection', params:[genre:genre ])
+	
 	}
 }

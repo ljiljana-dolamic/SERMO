@@ -1,30 +1,31 @@
+ <g:if test="${ft == 'author'}" >
+ <div id="author_filter_list" class="filter_list">
+ </g:if>
+  <g:else>
+   <div id="author_filter_list" class="filter_list" style= "display:none">
+  </g:else>
 
-<div id="author_filter_list" class="filter_list" style= "display:none">
 <table class="filters" style="width: 100%">
 <g:each in="${countByAuthor}" var="author" status="i">
 <tr class="block">
-<td class="column span-2 prepend-2">
+<td class="column span-1 prepend-1">
 -
 </td>
-<td class="column span-16 ">
-<%-- <g:checkBox name="by_author" id="${author.author_first_name}:${author.author_last_name}" --%>
-<%-- value="${false}" chacked="false" --%>
-<%-- onchange="${remoteFunction(action:'addAuthorToFilter',params:'\'author=\'+this.id',options: '[asynchronous: false]')} "/>--%>
+<td class="filter column span-20 ">
 <g:link action="addAuthorToFilter" elementId="${author.author_first_name}:${author.author_last_name}"
-								id="${author.author_first_name}:${author.author_last_name}" params= "[first_name:author.author_first_name, last_name:author.author_last_name]">
+								 params= "[first_name:author.author_first_name, last_name:author.author_last_name]">
 								${author.author_last_name}, ${author.author_first_name} (${author.'count(author_first_name)'})
 
 							</g:link>  
-<%-- <g:checkBox name="by_author" id="${author.author_first_name}:${author.author_last_name}" --%>
-<%-- value="${false}" chacked="false" --%>
-<%-- onchange="${remoteFunction(action:'addAuthorToFilter',params:'\'author=\'+this.id',options: '[asynchronous: false]')} "/>--%>
-<%-- </td>--%>
-<%-- 	<td class="column span-12 last">--%>
-<%--  <label for="${author.author_first_name}:${author.author_last_name}">--%>
-<%--  ${author.author_last_name}, ${author.author_first_name} (${author.'count(author_first_name)'})--%>
-<%--  </label>--%>
-  
    </td>
+   <g:if test="${filter == "${author.author_first_name}:${author.author_last_name}"}" >
+   <td id="${author.author_first_name}:${author.author_last_name}_cf" class="close_filter" style="color:red;">&#10008;</td>
+
+   </g:if>
+   <g:else>
+   <td id="${author.author_first_name}:${author.author_last_name}_cf" class="close_filter" style="color:red;  display:none">&#10008;</td>
+   </g:else>
+  
 </tr>
 </g:each>
 

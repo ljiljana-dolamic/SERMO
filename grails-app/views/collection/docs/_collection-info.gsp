@@ -1,6 +1,7 @@
 <div id="collection_info">
 	<g:each in="${docs}" var="doc" status="i">
-		<div class="status" id="${doc.id}_status">
+<%--		<div class="status" id="${doc.id}_status">--%>
+<div class="status" id="${doc.doc_id}_status">
 		 <div class= "block row">
 			<div class="titleImageThumb column span-4">
 				<g:render template="docs/thumb/titleImageThumb" model="${[doc:doc,i:i]}"></g:render>
@@ -13,7 +14,8 @@
 
 						<td class="column span-5 ">Auteur:</td>
 						<td class="column span-16 last">
-							${doc.authorLastName}, ${doc.authorFirstName}
+<%--							${doc.authorLastName}, ${doc.authorFirstName}--%>
+							${doc.author_last_name}, ${doc.author_first_name}
 						</td>
 
 					</tr>
@@ -21,7 +23,17 @@
 
 						<td class="column span-5 ">Année:</td>
 						<td class="column span-16 last">
-							${doc.editionYear}
+<%--							${doc.editionYear}--%>
+							${doc.edition_year}
+						</td>
+
+					</tr>
+					 <tr class="block">
+
+						<td class="column span-5">Titre de sermon :</td>
+						<td class="column span-16 last">
+<%--							${doc.titleBook}--%>
+						${doc.title_sermon}
 						</td>
 
 					</tr>
@@ -29,11 +41,12 @@
 
 						<td class="column span-5">Titre de recueil :</td>
 						<td class="column span-16 last">
-							${doc.titleBook}
+<%--							${doc.titleBook}--%>
+						${doc.title_book}
 						</td>
 
 					</tr>
-
+                  
 
 				</table>
 

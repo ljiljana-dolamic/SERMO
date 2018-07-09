@@ -1,5 +1,5 @@
-<div id="${docId}" class="sermon docs block" style= "display:none"> 
+<div id="${docId}" class="sermon docs block" > 
 
-<document:documentInfo docId="${docId}" page="${page}" pages="${pages}" />
+<document:documentInfo docId="${docId}" page="${page}" pages="${pages}" pageToShow= "${pageToShow}"/>
 
  </div>

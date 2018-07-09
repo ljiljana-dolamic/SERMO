@@ -26,8 +26,8 @@ class DocumentFrontTagLib {
 //		out << "</div>"
 		
 		out << "<div class=\"docFront block row\">"
-		out << render(template:"/taglibTemplates/pageContent", model:[page:page]);
-		out << render(template:"/taglibTemplates/pageImage", model:[docId:id,pages:pages]);
+		out << render(template:"/taglibTemplates/pageContent", model:[page:page,size:12]);
+		out << render(template:"/taglibTemplates/pageImage", model:[docId:id,pages:pages,size:12]);
 		out << "</div>"
 
 	}

@@ -1,4 +1,7 @@
 @CHARSET "UTF-8";
+#filters {
+	margin-top: 2em;
+}
 
 /* TABLES */
 
@@ -15,6 +18,7 @@
 
 .filters td {
 	padding: 0;
+	text-align: left;
 }
 .filters ul {
 	margin-top: 2em;
@@ -28,3 +32,29 @@
 	
 	margin-left: 2em;
 }
+
+.filters tr:hover {
+          cursor: pointer;
+        }
+.filters li:hover {
+          cursor: pointer;
+        }
+        .filters a{
+	text-decoration: none;
+	
+}
+
+.filters-menu:focus, .filters-menu:hover {
+/* 	background-color: #999999; */
+/* 	background: hsla(40, 40%, 100%, 0.8); */
+	outline: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.filters tr:focus, .filters tr:hover {
+/* 	background-color: #999999; */
+/* 	background: hsla(40, 40%, 100%, 0.8); */
+	outline: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+        

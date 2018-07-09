@@ -12,6 +12,7 @@
 		<g:else>
 			<ul class="errors">
 				<li>An error has occurred</li>
+				
 			</ul>
 		</g:else>
 	</body>

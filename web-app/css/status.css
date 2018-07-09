@@ -3,7 +3,7 @@
 	background: hsla(40, 40%, 100%, 0.8);
 /* 	background: url(../images/sermo/old-paper.png) no-repeat center center fixed; */
 	border: .1em solid #400000;
-	margin: 1em 1em 1em;
+	margin: .5em .5em .5em;
 	padding: 1em;
 /* 	width: 12em; */
  	float: left; 
@@ -74,4 +74,5 @@ p {
 
 #status tr:hover {
  	background: #800000; 
+}
 }

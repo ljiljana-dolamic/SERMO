@@ -5,8 +5,8 @@
     z-index: 1;
     top: 10%;
     left: 10%;
-    background-color:  hsla(40, 40%, 100%, 0.8);
-    background-color:  hsla(40, 40%, 100%, 0.8);
+    background-color:  #CCCCCC;
+    
     overflow: scroll;
     transition: 0.5s;
 }
@@ -29,7 +29,7 @@
 }
 
 .overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
+    color: #6699CC;
 }
 
 .overlay .closebtn {

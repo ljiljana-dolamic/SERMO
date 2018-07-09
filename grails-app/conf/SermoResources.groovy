@@ -37,6 +37,8 @@ modules = {
 		resource url: '/css/sermo/filters.css'
 		resource url: '/css/sermo/sermo.css'
 		resource url: '/css/sermo/navMenu.css'
+		resource url: '/css/sermo/equipe.css'
+		resource url: '/css/sermo/bible.css'
 		resource url: '/css/main.css'
 		resource url: '/css/status.css'
 		resource url: '/css/tipsy/tipsy.css'
@@ -46,6 +48,9 @@ modules = {
 		resource url: '/js/jquery/jquery.tipsy.js'
 		resource url: '/js/jquery/jquery.elevatezoom.js'
 		resource url : '/js/docPartShowChanger.js'
+		resource url : '/js/equipe.js'
+		resource url : '/js/bible.js'
+		resource url : '/js/search.js'
 	}
 
 	

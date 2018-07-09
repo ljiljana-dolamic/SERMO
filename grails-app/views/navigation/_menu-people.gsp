@@ -1,4 +1,4 @@
-<g:link controller ="getPeople" action="index" >
+<g:link controller ="equipe" action="index" >
 								Équipe
 
 							</g:link>

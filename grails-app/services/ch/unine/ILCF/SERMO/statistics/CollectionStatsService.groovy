@@ -33,18 +33,14 @@ class CollectionStatsService {
 		def db = new Sql(dataSource);
 		def totalCount = 0;
 		Map noTokens=[:]
+		
 		db.eachRow(query) { row ->
 			def tCount=row[0];
 			noTokens[row[1]]= tCount;
 			totalCount+=tCount;
 			
 		}
-		db.eachRow(query) { row ->
-			def tCount=row[0];
-			noTokens[row[1]]= tCount;
-			totalCount+=tCount;
-			
-		}
+		
 		[totalCount : totalCount,
 			noTokens : noTokens]
     }
@@ -65,6 +61,47 @@ class CollectionStatsService {
 	
 	def getCountbyDecade() {
 		def query =""" select edition_year,count(edition_year) from documents_info group by edition_year;""";
+		
+		Map noDocs=[:]
+		Map tmp=[:]
+		
+		def db = new Sql(dataSource);
+		
+		db.eachRow(query) { row ->
+			def ed_y = row[0];
+			def cnt = row[1];
+			def dec= (ed_y - 1550).intdiv(10);
+			dec= (dec == 20) ? 19:dec;
+//			def start= 1550+dec*10;
+//			def end= (start==1740)?1750:start+9;
+//			String decName=start+" : "+end;
+			if(noDocs[dec]){
+			 tmp= noDocs[dec]
+			}else{
+			def start= 1550+dec*10;
+			def end= (start==1740)?1750:start+9;
+			String decName=start+" : "+end;
+			 tmp=[:]
+			 tmp['name']=decName;
+			 tmp['start']=start;
+			 tmp['end']=end
+			 tmp['cnt']=0
+			}
+			
+			
+			tmp['cnt']+= cnt;
+			noDocs[dec]	=tmp;		
+		}
+		
+		def list_results = []
+		noDocs.each() { k, v -> list_results << v }
+		//System.out.println(list_results.toString());
+		
+		//return noDocs
+		return list_results
+    }
+	def getCountbyGenre() {
+		def query =""" select genre,count(genre) from documents_info group by genre order by genre;""";
 		def db = new Sql(dataSource);
 		
 		return db.rows(query)

@@ -3,15 +3,15 @@
 
 <%--		<div class="column span-2 prepend-6">--%>
 		<div class="selectPageNav">
-			<button id="prevPage" onclick="previousPage()">Précedente</button>
+			<button id="prevPage" onclick="previousPage()">&lt;&lt;</button>
 		</div>
 <%--		<div class="column span-6">--%>
 <div class="selectPageNav">
-				<select class="pageSelect_menu" name="pageSelect" id="pageSelect_menu" onchange="changePage(this.value)">
+				<select class="pageSelect_menu" name="pageSelect" id="pageSelect_menu" onchange="changePage(this.value)" >
 
 					<g:each in="${pages}" var="docPage" status="i">
 
-						<g:if test="${i == 0}">
+						<g:if test="${docPage == pageToShow}">
 							<option value="${docId}_${docPage}" selected="selected">
 								${docPage} [${i+1} / ${pages.size()}]
 							</option>
@@ -30,7 +30,7 @@
 
 <%--		<div class="column span-2 append-6 last">--%>
 		<div class="selectPageNav">
-			<button id="nextPage" onclick="nextPage()">Suivante</button>
+			<button id="nextPage" onclick="nextPage()"> &gt;&gt;</button>
 			
 	</div>	
 	

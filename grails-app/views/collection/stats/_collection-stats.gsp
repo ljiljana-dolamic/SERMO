@@ -1,58 +1,48 @@
-<div id="collection_stats">
+<div class="status">
 
-<%--	<div class="status">--%>
-		<div class="block row">
+	<%--	<div class="status">--%>
+	<div class="block row">
 
-			<div class=" column span-24 last">
+		<div class="column prepend-2 span-20 append-2 last">
 
-				<table style="width: 100%">
+			<table style="width: 100%">
 
-					<tr class="block">
 
-						<td class="column span-8 ">Nombre des documents:</td>
-						<td class="column span-12 last">
-							${noDocs}
-						</td>
+				<tr class="block">
+					<td><h1>Corpus SERMO I</h1></td>
+				</tr>
 
-					</tr>
-					<tr class="block">
+				<tr class="block">
+					<td class="column span-22 last">Le corpus SERMO contient ${noDocs}
+						sermons protestants francophones, édités pour la plupart à Genève,
+						entre 1550 et 1750, représentant ${tokens["body_sermon"]} tokens.
+						Ces textes ont été préparés pour l’analyse et l’exploitation
+						semi-automatique dans une approche de linguistique diachronique,
+						d’histoire des genres paralittéraires et d’analyse du discours en
+						diachronie. Les critères de sélection des sermons inclus dans le
+						corpus SERMO sont les suivants :
+						<ul class="liste_main">
+							<li class="liste_main">Date de performance du sermon (quand
+								elle est indiquée dans le titre ou le péritexte) ; par défaut,
+								date de publication du sermon : comprise entre 1550 et 1750</li>
+							<li class="liste_main">Lieu de publication du sermon :
+								Genève, à quelques exceptions près, indiquées dans les
+								métadonnées</li>
+							<li class="liste_main">Sauf exception, le premier sermon de chaque recueil a
+								été retranscrit, afin d’adopter un critère unique, qui convienne
+								aussi aux recueils qui ne contiennent qu’un seul sermon.</li>
+						</ul>
 
-						<td class="column span-8 ">Nombre des tokens:</td>
-						<td class="column span-12 last">
-							${totalTokens}
-						</td>
+					</td>
 
-					</tr>
-					<tr class="block">
+				</tr>
 
-						<td class="column span-8">Text tokens:</td>
-						<td class="column span-12 last">
-							${tokens["body_text"]}
-						</td>
 
-					</tr>
-					<tr class="block">
+			</table>
 
-						<td class="column span-8">Sermon tokens:</td>
-						<td class="column span-112 last">
-							${tokens["body_sermon"]}
-						</td>
-
-					</tr>
-					<tr class="block">
-
-						<td class="column span-8">Note tokens:</td>
-						<td class="column span-12 last">
-							${tokens["body_sermon_note"]}
-						</td>
-
-					</tr>
-
-				</table>
-
-			</div>
 		</div>
-<%--	</div>--%>
+	</div>
+	<%--	</div>--%>
 
 </div>
 
