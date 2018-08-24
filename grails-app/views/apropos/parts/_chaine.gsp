@@ -43,8 +43,7 @@
 							<li class="liste_main">Contrôle et correction de "POS"
 								(semi-automatique) </li>
 
-							<li class="liste_main">Annotation discursive (voir
-								ci-dessous) </li>
+							<li class="liste_main">Annotation discursive  </li>
 							<li class="liste_main">Annotation éditoriale </li>	
 							<li class="liste_main">Annotation structurale </li>	
 							<li class="liste_main">Autres annotations : p.ex. contrôle
@@ -55,10 +54,8 @@
 
 				</tr>
 				<tr class="block">
-					<td class="column span-22 last">La consultation et
-						l’exploitation scientifique du corpus permet aux
-						utilisateurs, via le site internet, de cibler le niveau
-						d’utilisation du corpus en fonction de leurs besoins :
+					<td class="column span-22 last">L’interface de consultation <a href="http://sermo.unine.ch/SERMO-CQPweb">(Analyse)</a> permet aux 
+					utilisateurs de cibler le niveau d’utilisation du corpus en fonction de leurs besoins :
 						micro-syntaxique pour l’analyse de phénomènes de grammaire de la
 						phrase, macro-syntaxique pour l’analyse de discours ou la
 						rhétorique, ou texte entier pour toute utilisation exégétique ou

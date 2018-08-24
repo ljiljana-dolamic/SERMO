@@ -99,6 +99,13 @@ body {
 	
 }
 
+.foot{
+/* 	position: absolute; */
+/* 	bottom:0; */
+   margin-top: 10pt;
+	
+}
+
 .catchWord{
 	color: #CCCCCC;
 	font-weight: normal;
@@ -446,11 +453,11 @@ flex-direction:column;
 								
 .sic{
 	color: #800080;
-	text-decoration: line-through;
+/* 	text-decoration: line-through; */
 }
 .del{
 	/*color: #800080;*/
-	text-decoration: line-through;
+/* 	text-decoration: line-through; */
 }
 .abbr{
 	color: #804040;
@@ -550,16 +557,17 @@ ul.liste_main  {
 
 #query{
 	
-	font-size: 10pt;
-	margin-right: 8%;
-	
-	
+	font-size: 12pt;
+	margin-right: 4%;
+	border-color:#6699cc;
+	font-style:italic;
 }
 
 #query_btn{
 /* background-image: url(../../images/skin/search-icon.png);*/
-    font-size:10pt;
+    font-size:12pt;
     font-family:AndronScriptorWeb;
+    line-height: 1em;
 }
 
 #pageSelect_menu{
@@ -590,6 +598,6 @@ ul.liste_main  {
 
 #searchDoc{
 	
-	margin: 2pt;
+/* 	margin: 2pt; */
 	
 }

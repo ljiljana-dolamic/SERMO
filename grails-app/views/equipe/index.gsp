@@ -2,7 +2,7 @@
 	<title>SERMO|Equipe</title>
 	<div class="column span-5">
 		<%--<g:include controller="filters" action="countByAuthor"/>--%>
-		<g:render template="parts_menu/menu"></g:render>
+		<g:render template="/apropos/parts_menu/menu"></g:render>
 	</div>
 	<div class="column span-16 append-3">
 	
@@ -58,12 +58,24 @@
 								</table>	
 								</li>
 
-							<li><table><tr><td><g:img dir='images/people' file="equipe.PNG"
-									alt='Magdalena AUGUSTYN-GAULTIER' alt="Magdalena AUGUSTYN-GAULTIER" width="200"
+							<li><table><tr><td><g:img dir='images/people' file="MAG.jpg"
+									alt='Magdalena AUGUSTYN-GAULTIER' alt="Magdalena AUGUSTYN-GAULTIER" 
 									height="200" class="profilepic" />
 									<span class="hcontent job">collaboratrice
 									scientifique <a href="https://www.unine.ch/ilcf/home.html">ILCF</a>
-							</span><span class="hcontent url"></span> <span class="hcontent desc"><strong></strong><br></span></tr></td>
+							</span><span class="hcontent url"></span> <span class="hcontent desc"><strong>
+							Docteure en Sciences du langage, Spécialité : Didactique et linguistique<br>
+							Intérêts de recherche :
+							<ul>
+							<li>Sémantique et lexicologie : figement, collocations, mécanismes figuratifs, polysémie</li>
+							<li>Analyse du discours : discours rapporté, modalisation, métadiscours</li>
+							<li>Linguistique de corpus : création, édition/outillage numérique, exploitation et analyse des corpus écrits</li>
+							<li>Didactique du FLE</li>
+							
+							</ul>
+
+
+							</strong><br></span></tr></td>
 									<tr><td><span class="equipe-label">Magdalena AUGUSTYN-GAULTIER</span> 
 									</tr></td>
 								</table>	
@@ -118,45 +130,7 @@
 							
 						</ul>
 
-<%--						<div id="teamcontent-2" class="clearfix">--%>
-<%--							<g:img dir='images/people' file="equipe.PNG" alt='no image'--%>
-<%--								id="replaceimg-2" class="bigimg-2" height="400" />--%>
-<%----%>
-<%--							<div id="teamdetails-2">--%>
-<%--								<h3 id="bigname-2">Name</h3>--%>
-<%--								<h4 id="bigjob-2">Title</h4>--%>
-<%--								<h4 id="bigurl-2">url page</h4>--%>
-<%--								<p id="bigdesc-2">A brief description.</p>--%>
-<%--							</div>--%>
-<%--						</div>--%>
-<%----%>
-<%--						<ul class="team clearfix">--%>
-<%----%>
-<%----%>
-<%--							<li><g:img dir='images/people' file="equipe.PNG"--%>
-<%--									alt='no image' alt="Aurélie REUSSER-ELZINGRE" width="200"--%>
-<%--									height="200" class="profilepic-2" /> <span--%>
-<%--								class="hcontent job">collaboratrice scientifique <a--%>
-<%--									href="https://www.unine.ch/ilcf/home.html">ILCF</a>--%>
-<%--							</span> <span class="hcontent desc"><strong>vh,j</strong><br></span>--%>
-<%--							</li>--%>
-<%--							<li><g:img dir='images/people' file="equipe.PNG"--%>
-<%--									alt='no image' alt="Michaela BJUGGFALT-CHÂTEAUX" width="200"--%>
-<%--									height="200" class="profilepic-2" /> <span--%>
-<%--								class="hcontent job">collaboratrice scientifique <a--%>
-<%--									href="https://www.unine.ch/ilcf/home.html">ILCF</a>--%>
-<%--							</span> <span class="hcontent desc"><strong>vh,j</strong><br></span>--%>
-<%--							</li>--%>
-<%--							<li><g:img dir='images/people' file="equipe.PNG"--%>
-<%--									alt='no image' alt="Ruth STAWARZ-LUGINBUEHL" width="200"--%>
-<%--									height="200" class="profilepic-2" /> <span--%>
-<%--								class="hcontent job">collaboratrice scientifique <a--%>
-<%--									href="https://www.unine.ch/ilcf/home.html">ILCF</a>--%>
-<%--							</span> <span class="hcontent desc"><strong>vh,j</strong><br></span>--%>
-<%--							</li>--%>
-<%--						</ul>--%>
-<%----%>
-<%--						</div><!-- teamcontent-2 -->--%>
+
 
 					</div> <!-- team-content-2 -->
 

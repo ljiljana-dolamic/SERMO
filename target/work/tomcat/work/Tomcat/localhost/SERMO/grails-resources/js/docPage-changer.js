@@ -60,7 +60,8 @@ function changePage(val){
 }
 
 function showPage(val){
-	var e_val= CSS.escape(val);
+	var e_val= val.replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&");
+	//var e_val= val;
 	$(".pageBreak").hide();   
 	$("#"+e_val).show();
 	$(".currentPageImage").hide();
@@ -87,9 +88,12 @@ function loadTipsy(){
 
 function openNav() {
     document.getElementById("myNav").style.height = "80%";
+    $("#myNav").show();
+    
 }
 
 function closeNav() {
     document.getElementById("myNav").style.height = "0%";
+    $("#myNav").hide();
 }
 

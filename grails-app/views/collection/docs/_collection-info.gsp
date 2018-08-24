@@ -14,7 +14,6 @@
 
 						<td class="column span-5 ">Auteur:</td>
 						<td class="column span-16 last">
-<%--							${doc.authorLastName}, ${doc.authorFirstName}--%>
 							${doc.author_last_name}, ${doc.author_first_name}
 						</td>
 
@@ -23,7 +22,6 @@
 
 						<td class="column span-5 ">Année:</td>
 						<td class="column span-16 last">
-<%--							${doc.editionYear}--%>
 							${doc.edition_year}
 						</td>
 
@@ -32,7 +30,6 @@
 
 						<td class="column span-5">Titre de sermon :</td>
 						<td class="column span-16 last">
-<%--							${doc.titleBook}--%>
 						${doc.title_sermon}
 						</td>
 
@@ -41,7 +38,6 @@
 
 						<td class="column span-5">Titre de recueil :</td>
 						<td class="column span-16 last">
-<%--							${doc.titleBook}--%>
 						${doc.title_book}
 						</td>
 

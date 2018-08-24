@@ -24,6 +24,51 @@
 					</td>
 
 				</tr>
+				
+					<tr class="block">
+
+						<td class="column span-8 ">Type de publication:</td>
+						<td class="column span-12 last">
+						<g:if test="${doc.how_published=='recueil'}">
+						
+								Recueil de ${doc.no_sermons} sermons
+						
+						</g:if>
+						<g:else>
+   								Sermon isolé
+						</g:else>	
+						</td>
+
+					</tr>
+							
+				<g:if test="${doc.type_collection}">
+					<tr class="block">
+
+						<td class="column span-8 ">Type de collection:</td>
+						
+						<td class="column span-12 last">
+
+							
+								${doc.type_collection}
+							
+						</td>
+
+					</tr>
+				</g:if>
+				<g:if test="${doc.theme_collection}">
+					<tr class="block">
+
+						<td class="column span-8 ">Theme de collection:</td>
+						
+						<td class="column span-12 last">
+
+							
+								${doc.theme_collection}
+							
+						</td>
+
+					</tr>
+				</g:if>
 				<tr class="block">
 
 					<td class="column span-8 ">Titre de sermon:</td>
@@ -33,6 +78,35 @@
 					</td>
 
 				</tr>
+				<tr class="block">
+
+						<td class="column span-8 ">Type de sermon:</td>
+						
+						<td class="column span-12 last">
+
+							<g:if test="${doc.genre}">
+								${doc.genre}
+							</g:if>
+							<g:else>
+   								INCONNU
+							</g:else>	
+						</td>
+
+					</tr>
+				<g:if test="${doc.sermon_theme}">
+					<tr class="block">
+
+						<td class="column span-8 ">Theme de sermon:</td>
+						
+						<td class="column span-12 last">
+
+							
+								${doc.sermon_theme}
+							
+						</td>
+
+					</tr>
+				</g:if>
 				<tr class="block">
 
 					<td class="column span-8 ">Date d'édition:</td>
@@ -66,45 +140,61 @@
 						<td class="column span-8 ">Date de prononciation:</td>
 						
 						<td class="column span-12 last">
-<%--						<g:if test="${params.sermonYear}">--%>
-<%--							${params.sermonYear}--%>
-<%--						</g:if>--%>
-<%--						<g:else>--%>
-<%--   UNKNOWN--%>
-<%--</g:else>	--%>
-<g:if test="${doc.sermon_date}">
-							${doc.sermon_date}
-						</g:if>
-						<g:else>
-   INCONNU
-</g:else>	
-						</td>
 
-					</tr>
-
-					<tr class="block">
-
-						<td class="column span-8 ">Type de sermon:</td>
-						
-						<td class="column span-12 last">
-<%--						<g:if test="${params.genre}">--%>
-<%--							${params.genre}--%>
-<%--						</g:if>--%>
-<%--						<g:else>--%>
-<%--   UNKNOWN--%>
-<%--</g:else>	--%>
-<g:if test="${doc.genre}">
-							${doc.genre}
-						</g:if>
-						<g:else>
-   INCONNU
-</g:else>	
+							<g:if test="${doc.sermon_date}">
+								${doc.sermon_date}
+							</g:if>
+							<g:else>
+   								INCONNU
+							</g:else>	
 						</td>
 
 					</tr>
 					
+					
+
+<tr class="block">
+
+						<td class="column span-8 ">Texte biblique commenté:</td>
+						<td class="column span-12 last">
+					<g:each in="${doc_bibl}" var="docBibl" status="i">
+						<g:if test="${docBibl.bibl_text}">
+							${docBibl.bibl_text} <br/>
+						</g:if>
+						<g:else>
+							INCONNU
+						</g:else>
+
+					</g:each>
 				
-				
+</td>
+
+				</tr>	
+<tr class="block">
+
+						<td class="column span-8 ">Paratexte:</td>
+						<td class="column span-12 last">				
+						<g:each in="${doc_para}" var="docPara" status="i">
+						  <g:if test="${docPara.pt_type =="preface"}">
+							<strong>Préface:</strong><br/>
+							${docPara.para_text}<br/>
+						  </g:if>
+						  <g:elseif test="${docPara.pt_type == "epistle"}">
+							<strong>Êpitre:</strong><br/>
+							${docPara.para_text}<br/>
+							 
+						  </g:elseif>
+						  <g:elseif test="${docPara.pt_type == "tableOfContents"}">
+							<strong>Table des matières:</strong><br/>
+							${docPara.para_text}<br/>
+							 
+						  </g:elseif>
+						  <g:else>
+							<strong>Autre:</strong><br/>
+							${docPara.para_text}<br/>
+						</g:else>
+
+					</g:each>		
 
 			</table>
 

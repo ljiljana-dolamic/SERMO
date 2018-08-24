@@ -18,20 +18,14 @@
 		
 		
 		
-		<g:render template = "docs/doc-meta" model="${[docId:docId,doc:doc]}"></g:render>
+		<g:render template = "docs/doc-meta" model="${[docId:docId,doc:doc,doc_para:doc_para,doc_bibl:doc_bibl]}"></g:render>
 			</div>
-		
-<%--		<div class="pagination">--%>
-<%--				<g:paginate next="Suivant" prev="Précédent" action="index" total="${total}" params="${params}" />--%>
-<%--			</div>	--%>
-<%--		   --%>
-<%--		</div>	--%>
 
-
-	
 </div>
 
 </div>
+
+<input id = "noHits" type="hidden" name="hitsHidden" value="${noHits}" />
 
 </div>
 <div id="myModal" class="modal">

@@ -5,7 +5,7 @@
 					src="${resource(dir:'images/sermo',file:'sermoLogo4.png')}"
 					alt="SERMO" />
 			</a>
-			<div  id="v_beta" title="Version finale: août 2018">beta</div>
+<%--			<div  id="v_beta" title="Version finale: août 2018">beta</div>--%>
 		</div>
 		
 
@@ -17,6 +17,9 @@
 
 			<li class="nav">
 				<g:render template="/navigation/menu-collection" />
+			</li>
+			<li class="nav about_dropdown">
+				<g:render template="/navigation/menu-documentation" />
 			</li>
 			<li class="nav">
 				<a href="http://sermo.unine.ch/SERMO-CQPweb" target="_blank">Analyse</a>

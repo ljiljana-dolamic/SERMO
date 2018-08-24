@@ -17,6 +17,8 @@ class BibleController {
 		   params.remove('verses')
 	    }
 		
+		
+		
 		if(params.bible && !params.bible.equals("bibleSegond21")){
 			
 			def bibleFile = params.bible;

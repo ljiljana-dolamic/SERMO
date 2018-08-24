@@ -256,3 +256,35 @@
 	};
     
 })(jQuery);
+
+
+$( document ).ready(function() {
+
+	$(function() {
+	   $('a[rel=tipsy]').tipsy({fade: true, gravity: 'n'});
+	  
+
+	var toolTipOptions = {
+	    delayIn: 0,      // delay before showing tooltip (ms)
+	    delayOut: 0,     // delay before hiding tooltip (ms)
+	    fade: true,     // fade tooltips in/out?
+	    fallback: '',    // fallback text to use when no tooltip text
+	    gravity: 'n',    // gravity
+	    html: false,     // is tooltip content HTML?
+	    live: false,     // use live event support?
+	    offset: 0,       // pixel offset of tooltip from element
+	    opacity: 0.8,    // opacity of tooltip
+	    title: 'data-tooltip',  // attribute/callback containing tooltip text
+	    trigger: 'hover' // how tooltip is triggered - hover | focus | manual
+	};
+	  
+	  
+	  
+	  $('.sic').tipsy(toolTipOptions);
+	  $('.abbr').tipsy(toolTipOptions);
+	  
+	 });
+	  
+	  
+	  
+	}); // end doc ready

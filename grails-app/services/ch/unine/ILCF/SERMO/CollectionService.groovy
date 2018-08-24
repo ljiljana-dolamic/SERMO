@@ -18,6 +18,22 @@ class CollectionService {
 		return db.rows(query, [docId]);
     }
 	
+	def getDocParatextById(docId) {
+		def query =""" select * from paratext where doc_id=?;""";
+		def db = new Sql(dataSource);
+		
+	    
+		return db.rows(query, [docId]);
+    }
+	
+	def getDocTextBibliqueById(docId) {
+		def query =""" select * from text_biblique where doc_id=?;""";
+		def db = new Sql(dataSource);
+		
+	    
+		return db.rows(query, [docId]);
+    }
+	
 	def getDocs(fd){
 		
 	  String fds=fd.join("','");

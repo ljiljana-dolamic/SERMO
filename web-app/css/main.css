@@ -342,7 +342,7 @@ tr {
 }
 
 tr>td:first-child, tr>th:first-child {
-	padding-left: 1.25em;
+/* 	padding-left: 1.25em; */
 }
 
 tr>td:last-child, tr>th:last-child {

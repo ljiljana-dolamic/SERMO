@@ -42,6 +42,7 @@ modules = {
 		resource url: '/css/main.css'
 		resource url: '/css/status.css'
 		resource url: '/css/tipsy/tipsy.css'
+		resource url: '/css/video_tut.css'
 		
 		resource url : '/js/docPage-changer.js'
 		resource url : '/js/filterShowHide.js'
@@ -51,6 +52,8 @@ modules = {
 		resource url : '/js/equipe.js'
 		resource url : '/js/bible.js'
 		resource url : '/js/search.js'
+		resource url : '/js/bibtex2html.js'
+		resource url : '/js/videoTut.js'
 	}
 
 	

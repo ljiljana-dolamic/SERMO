@@ -9,7 +9,7 @@
 ${doc.author_last_name}, ${doc.author_first_name}  (${doc.edition_year})
 </td>
 <td id = "searchDoc" class="status docPartToShow column span-6 last"> 
-						<input class="span-18 column" type="search" id="query" placeholder="Recherche dans ce sermon..">
+						<input class="span-17 column" type="search" id="query" placeholder="Rechercher dans ce sermon ...">
 <button class="btn span-4 column" id="query_btn" onclick="searchInDoc('${doc.doc_id}')">Valider</button>
 </td>
 </tr>

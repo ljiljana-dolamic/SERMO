@@ -124,11 +124,7 @@ class DocumentDisplayService {
 							leftNote=false;
 
 						}
-						
-						if(endLetterine && sb.charAt(sb.length - 1).equals(' ')){
-							sb.deleteCharAt(sb.length - 1);
-							endLetterine = false;
-						}
+					
 						switch (localname) {
 							case "choice":
 							case "subst":
@@ -238,6 +234,7 @@ class DocumentDisplayService {
 								StringBuilder tmpSpanQ=new StringBuilder();
 								tmpSpanQ.append("<span class=\"quote\" ");
 								if (parser.getAttributeValue(null, "source") != null) {
+									
 									//tmpSpanQ.append("onclick=\"openBiblVers(").append(parser.getAttributeValue(null, "type")).append(",").append(parser.getAttributeValue(null, "source")).append(")\"");
 									tmpSpanQ.append("type=\"").append(parser.getAttributeValue(null, "type")).append("\" source=\"").append(parser.getAttributeValue(null, "source")).append("\"");
 								}
@@ -475,7 +472,8 @@ class DocumentDisplayService {
 									noteContent.append("<span class=\"");
 									noteContent.append(choiceClass);
 
-									noteContent.append("\"  title=\"").append(choiceCorr).append("\">");
+									noteContent.append("\"  title=\"").append(choiceCorr);
+									noteContent.append("\"  data-tooltip=\"").append(choiceCorr).append("\">");
 									noteContent.append(choiceSic).append("</span>");
 									//if(choiceClass.equals("del")){
 									//	noteContent.append(choiceCorr);
@@ -484,7 +482,8 @@ class DocumentDisplayService {
 									sb.append("<span class=\"");
 									sb.append(choiceClass);
 
-									sb.append("\"  title=\"").append(choiceCorr).append("\">");
+									sb.append("\"  title=\"").append(choiceCorr);
+									sb.append("\"  data-tooltip=\"").append(choiceCorr).append("\">");
 									sb.append(choiceSic).append("</span>");
 
 									if(choiceClass.equals("del")){
@@ -645,10 +644,10 @@ class DocumentDisplayService {
 						}
 						break;
 					case XMLStreamConstants.CHARACTERS:
-					if(endLetterine && sb.charAt(sb.length - 1).equals(' ')){
-						sb.deleteCharAt(sb.length - 1);
-						endLetterine = false;
-					}
+//					if(endLetterine && sb.charAt(sb.length - 1).equals(' ')){
+//						sb.deleteCharAt(sb.length - 1);
+//						endLetterine = false;
+//					}
 						if( !flagNote && parser.getText().replaceAll("\\s+", "").length() > 0){
 							leftNote=false;
 
@@ -661,7 +660,7 @@ class DocumentDisplayService {
 							noteContent.append(parser.getText().replace("'", "&apos;"));
 						}else{
 						    
-							sb.append(parser.getText().replace("\n", " ").replaceAll("\\s+", " ").trim());
+							sb.append(parser.getText().replace("\n", " ").replaceAll("\\s+", " "));
 						}
 						break;
 				}
@@ -748,6 +747,7 @@ class DocumentDisplayService {
          boolean closeSicHit =false;
 		
 		String currentPage;
+		int noHits=0;
 		
 		for (int event = parser.next(); event != XMLStreamConstants.END_DOCUMENT; event = parser.next()) {
 			
@@ -891,7 +891,7 @@ class DocumentDisplayService {
 							case "quote":
 								StringBuilder tmpSpanQ=new StringBuilder();
 								tmpSpanQ.append("<span class=\"quote\" ");
-								if (parser.getAttributeValue(null, "type") != null && parser.getAttributeValue(null, "source") != null) {
+								if (parser.getAttributeValue(null, "source") != null) {
 									tmpSpanQ.append("type=\"").append(parser.getAttributeValue(null, "type")).append("\" source=\"").append(parser.getAttributeValue(null, "source")).append("\"");
 								}
 
@@ -1264,13 +1264,15 @@ class DocumentDisplayService {
 									noteContent.append("<span class=\"");
 									noteContent.append(choiceClass);
 
-									noteContent.append("\"  title=\"").append(choiceCorr).append("\">");
+									noteContent.append("\"  title=\"").append(choiceCorr);
+									noteContent.append("\"  data-tooltip=\"").append(choiceCorr).append("\">");
 									noteContent.append(choiceSic).append("</span>");
 								}else{
 									if(inMatch){
 										matchContent.append("<span class=\"");
 										matchContent.append(choiceClass);
-										matchContent.append("\"  title=\"").append(choiceCorr).append("\">")
+										matchContent.append("\"  title=\"").append(choiceCorr);
+										matchContent.append("\"  data-tooltip=\"").append(choiceCorr).append("\">")
 										matchContent.append("<span class= \" hit \">")
 										matchContent.append(choiceSic).append("</span>").append("</span>");
 										if(closeSicHit){
@@ -1289,7 +1291,8 @@ class DocumentDisplayService {
 
 										noMatchContent.append("<span class=\"");
 										noMatchContent.append(choiceClass);
-										noMatchContent.append("\"  title=\"").append(choiceCorr).append("\">")
+										noMatchContent.append("\"  title=\"").append(choiceCorr);
+										noMatchContent.append("\"  data-tooltip=\"").append(choiceCorr).append("\">")
 										noMatchContent.append(choiceSic).append("</span>");
 										
 										if(closeSicHit){
@@ -1309,7 +1312,8 @@ class DocumentDisplayService {
 										sb.append("<span class=\"");
 										sb.append(choiceClass);
 
-										sb.append("\"  title=\"").append(choiceCorr).append("\">");
+										sb.append("\"  title=\"").append(choiceCorr);
+										sb.append("\"  data-tooltip=\"").append(choiceCorr).append("\">");
 										sb.append(choiceSic).append("</span>");
 									}
 
@@ -1426,13 +1430,15 @@ class DocumentDisplayService {
 											
 											if(!noteID.equals("")){
 												if(inMatch){
-													matchContent.append("id=\"").append(noteID).append("\" ");
-													noMatchContent.append("id=\"").append(noteID).append("\" ");
+													matchContent.append("id=\"").append(noteID).append("\" ").append("'>");
+													noMatchContent.append("id=\"").append(noteID).append("\" ").append("'>");;
 												}else{
 													sb.append("id=\"").append(noteID).append("\" ");
+													
 												}
 											}
-
+											
+											
 											sb.append("'>");
 										}else{
 											if(inMatch){
@@ -1444,11 +1450,12 @@ class DocumentDisplayService {
 
 												}
 												matchContent.append("'>");
-												noMatchContent.append("<span class=\"note margin-right\" ");
+												noMatchContent.append("'>");
 											}else{
 												sb.append("<span class=\"note margin-right\" ");
 												if(!noteID.equals("")){
 													sb.append("id=\"").append(noteID).append("\" ");
+													
 												}
 												sb.append("'>");
 											}
@@ -1464,21 +1471,21 @@ class DocumentDisplayService {
 									}else if(noteType==2){
 										if(inMatch){
 
-											matchContent.append("<div class=\"note foot\" >" );
+											matchContent.append("<div class=\"note foot\" " );
 											if(!noteID.equals("")){
 												matchContent.append("id=\"").append(noteID).append("\" ");
 											}
 											matchContent.append(" >" );
 											matchContent.append(noteContent.toString()).append("</div>");
 
-											noMatchContent.append("<div class=\"note foot\" >" );
+											noMatchContent.append("<div class=\"note foot\" " );
 											if(!noteID.equals("")){
 												noMatchContent.append("id=\"").append(noteID).append("\" ");
 											}
 											noMatchContent.append(" >" );
 											noMatchContent.append(noteContent.toString()).append("</div>");
 										}else{
-											sb.append("<div class=\"note foot\" >" );
+											sb.append("<div class=\"note foot\" " );
 											if(!noteID.equals("")){
 												sb.append("id=\"").append(noteID).append("\" ");
 											}
@@ -1614,13 +1621,6 @@ class DocumentDisplayService {
 						}
 						if(flagChoice && flagSic && parser.getText().length() > 0){
 							choiceSic += parser.getText().replaceAll("\\s+", " ");
-//							String choiseSicTest= parser.getText().replaceAll("\\s+", ""); 
-//							if(flagAbbr && remQuery.length() > choiceSicTest.length() && remQuery.substring(0,choiceSicTest.length()).equals(choiceSicTest)){
-//								inMatch=true;
-//								String tmpRest= remQuery.substring(choiceSicTest.length(), remQuery.length());
-//								remQuery.setLength(0);
-//								remQuery.append(tmpRest);
-//							}
 							
 						}else if(flagChoice && flagCorr && parser.getText().length() > 0){
 							choiceCorr += parser.getText().replaceAll("\\s+", " ");
@@ -1646,27 +1646,30 @@ class DocumentDisplayService {
 							String textToAdd = parser.getText().replaceAll("\\n", " ").replaceAll("\\s+", " ");
 							noMatchContent.append(textToAdd);
 
-							String textToMatch = parser.getText().replaceAll("\\s+", "").replaceAll("\\n", ""); //text without spaces
+							//String textToMatch = parser.getText().replaceAll("\\s+", "").replaceAll("\\n", ""); //text without spaces
+							String textToMatch = textToAdd.replaceAll("\\s", ""); //text without spaces
 
-							//System.out.println ("add: "+textToAdd+"; match: "+textToMatch +"; query: "+ remQuery.toString());
-
+							
 							if(inMatch){
 								if(remQuery.length() >= textToMatch.length()){
 									if(remQuery.substring(0, textToMatch.length()).equals(textToMatch)){
 										matchContent.append("<span class= \" hit \">").append(textToAdd).append("</span>");
 										String tmpRest= remQuery.substring(textToMatch.length(), remQuery.length());
-										
+									
 										//System.out.println("tmp q rest: "+ tmpRest);
 										remQuery.setLength(0);
 										remQuery.append(tmpRest);
-										//remQuery = remQuery.substring(textToMatch.length(), remQuery.length());
+										
 										if(remQuery.length() == 0 ){ //if equal, match finished
 											sb.append(matchContent.toString());
 											inMatch =false;
 											matchContent.setLength(0);
 											noMatchContent.setLength(0);
-											
+											remQuery.setLength(0);
+										    remQuery.append(query.replaceAll("\\s+", ""));
+											noHits++;
 											if(pageToShow.equals('')){pageToShow=currentPage;}
+											
 										}else{
 											inMatch =true; // sanity check
 										}
@@ -1683,9 +1686,9 @@ class DocumentDisplayService {
 									}
 
 								}else{//remQuery.length < textToMatch.length()
-
+                                    
 									if(textToMatch.substring(0, remQuery.length()).equals(remQuery.toString())){
-//										
+										
 										int noCaracter=remQuery.length();
 										int index=0;
 										matchContent.append("<span class= \" hit \">");
@@ -1702,6 +1705,7 @@ class DocumentDisplayService {
 										matchContent.append("</span>");
 										inMatch =false;
 										sb.append(matchContent.toString());
+										noHits++;
 										if(pageToShow.equals('')){pageToShow=currentPage;}
 										matchContent.setLength(0);
 										noMatchContent.setLength(0);
@@ -1726,9 +1730,11 @@ class DocumentDisplayService {
 
 							}else{// not in match
 								String [] queryParts =  query.split("\\s");
+								//String  queryParts =  query.charAt(0);
 
-
-								int startIndex = getStartIndex(textToAdd, queryParts);//!!!!!!!
+								int startIndex = getStartIndex(textToAdd, queryParts[0]);//!!!!!!!
+								//System.out.println("TTA:  "+ textToAdd);
+								
 								if(startIndex==-1){
 									//noMatch
 									sb.append(textToAdd);
@@ -1737,10 +1743,13 @@ class DocumentDisplayService {
 								   sb.append(textToAdd.substring(0, startIndex));
 								   noMatchContent.setLength(0);
 									noMatchContent.append(textToAdd.substring(startIndex));
-
+                                        
 									textToAdd=textToAdd.substring(startIndex);
 									
+									//System.out.println("TTA2:  "+ textToAdd);
 									textToMatch = textToAdd.replaceAll("\\s+", "").replaceAll("\\n", "");
+									
+									
 									
 									if(remQuery.length() >= textToMatch.length()){
 										if(remQuery.substring(0, textToMatch.length()).equals(textToMatch)){
@@ -1756,6 +1765,9 @@ class DocumentDisplayService {
 												inMatch =false;
 												matchContent.setLength(0);
 										        noMatchContent.setLength(0);
+												remQuery.setLength(0);
+												remQuery.append(query.replaceAll("\\s+", ""));
+												noHits++;
 												if(pageToShow.equals('')){pageToShow=currentPage;}
 											}else{
 												inMatch =true; // sanity check
@@ -1776,6 +1788,7 @@ class DocumentDisplayService {
 	
 										if(textToMatch.substring(0, remQuery.length()).equals(remQuery.toString())){
 											
+											
 											int noCaracter=remQuery.length();
 											int index=0;
 											matchContent.append("<span class= \" hit \">");
@@ -1790,16 +1803,18 @@ class DocumentDisplayService {
 	
 	
 											matchContent.append("</span>");
-											
-											
+											//System.out.println("TTA3:  "+ matchContent.toString());
 											
 											sb.append(matchContent.toString());
+											noHits++;
 											if(pageToShow.equals('')){pageToShow=currentPage;}
 											inMatch =false;
 											matchContent.setLength(0);
 											noMatchContent.setLength(0);
 											remQuery.setLength(0);
 										    remQuery.append(query.replaceAll("\\s+", ""));
+											//System.out.println("TTA4:  "+ textToAdd.substring(index));
+											
 											//for(int i = index; i < textToAddParts.length; i++){
 												sb.append(textToAdd.substring(index));
 											//}
@@ -1808,10 +1823,10 @@ class DocumentDisplayService {
 											// restart matching
 											inMatch =false;
 											sb.append(noMatchContent.toString());
-											matchContent.setLength(0);;
-											noMatchContent.setLength(0);;
+											matchContent.setLength(0);
+											noMatchContent.setLength(0);
 											
-											remQuery.setLength(0);;
+											remQuery.setLength(0);
 											remQuery.append(query.replaceAll("\\s+", ""));
 										}
 									}
@@ -1836,27 +1851,32 @@ class DocumentDisplayService {
 
 		sb.append("</div>");//close last page
 		
-		System.out.println("On page: "+ pageToShow);
+		
 		
 		return new SelectedPageSummary(
 				page : sb.toString(),
 				pages: pages,
 				pTs:pageToShow,
+				noHits:noHits,
 				)
 
 	}
 
-	def getStartIndex (String textToAdd, String [] queryParts){
+	def getStartIndex (String textToAdd, String queryParts){
+		int startIndex = -1;
 		
-		int startIndex = textToAdd.indexOf(queryParts[0]);
+		int lengthQR = queryParts.length();
 		
+		while(startIndex == -1 && lengthQR > 1){
+			startIndex = textToAdd.indexOf(queryParts.substring(0, lengthQR-1));
+			lengthQR--;
+		}
+		
+
 		if(startIndex==-1){
 			return -1
 		}else{
-		return startIndex;
-
-
-
+			return startIndex;
 		}
 
 	}

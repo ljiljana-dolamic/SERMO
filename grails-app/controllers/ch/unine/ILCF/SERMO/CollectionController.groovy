@@ -93,13 +93,6 @@ class CollectionController {
 		render(template : "docs/doc-body", model:[docId:id,page:bodyPageDetails.page,pages:bodyPageDetails.pages])
 		
 		
-		Map docTag = collectionStatsService.docTagCount(id);
-		
-		
-		Map docToken = collectionStatsService.docTokenCount(id);
-	
-		//render(template : "docs/doc-stats", model:[docId:id,tagInfo:docTag,tokenInfo:docToken])
-		
 		render(template : "docs/doc-meta", model:[docId:id,params:params])
 //		
 		 
@@ -109,8 +102,12 @@ class CollectionController {
 	def doc(){
 		def id = params.docId;
 		
+		
 		def  doc = collectionService.getDocById(id)[0]; 
 		
+		def doc_para= collectionService.getDocParatextById(id);
+		
+		def doc_text_bibl= collectionService.getDocTextBibliqueById(id);
 		
 		def filedir = params.filedir?: grailsApplication.config.sermoXMLDefault.filedir;
 		
@@ -135,14 +132,13 @@ class CollectionController {
 				 pageToShow = bodyPageDetails.pTs;
 				 bodyPageDetails = documentDisplayService.processSearch(filedir,id,"body",bodyPageDetails.pTs,query);
 			 }
+			 [docId:id,frontPage:frontPageDetails.page,frontPages:frontPageDetails.pages,bodyPage:bodyPageDetails.page, bodyPages:bodyPageDetails.pages, doc:doc, pageToShow:pageToShow,noHits:bodyPageDetails.noHits, params:params]
 		}else{
 		    bodyPageDetails = documentDisplayService.process(filedir,id,"body",pageToShow);
+			[docId:id,frontPage:frontPageDetails.page,frontPages:frontPageDetails.pages,bodyPage:bodyPageDetails.page, bodyPages:bodyPageDetails.pages, doc:doc, doc_para:doc_para,doc_bibl:doc_text_bibl, pageToShow:pageToShow,noHits:"-1", params:params]
 		}
+	
 		
-		
-	//	bodyPageDetails = documentDisplayService.process2(filedir,id,"body",pageToShow,);
-
-		[docId:id,frontPage:frontPageDetails.page,frontPages:frontPageDetails.pages,bodyPage:bodyPageDetails.page, bodyPages:bodyPageDetails.pages, doc:doc, pageToShow:pageToShow, params:params]
 		
 	}
 	
@@ -208,12 +204,36 @@ class CollectionController {
 		
 	}
 	
-  def bible(){
+   def bible(){
 	  def bible=params.bible
 	  def verses=params.verses
 	  
 	   return redirect(controller:'bible', params:[bible:bible , verses:verses ])
   }
-	
+   
+   
+   def listeDesSermons(){
+	  
+   		def docs = collectionService.getAllDocs();
+		   [docs:docs]
+		   
+}
+   
+   def downloadXML(){
+	  def doc_id = params.doc_id
+	  def fileName = doc_id+".xml"
+	  def xmldir = grailsApplication.config.sermoXMLDefault.filedir
+	  def file = new File(xmldir,fileName)
+	  byte[] xmlBytes = file.bytes
+	  response.contentType = "text/xml";
+	  response.outputStream << xmlBytes
+   }
+   
+   def downloadPDF(){
+   
+   
+}
+
   
 }
+

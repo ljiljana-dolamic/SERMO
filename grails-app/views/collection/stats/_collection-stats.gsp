@@ -9,11 +9,11 @@
 
 
 				<tr class="block">
-					<td><h1>Corpus SERMO I</h1></td>
+					<td><h1>Corpus SERMO</h1></td>
 				</tr>
 
 				<tr class="block">
-					<td class="column span-22 last">Le corpus SERMO contient ${noDocs}
+					<td class="column span-22 last"><a href="../collection">Le corpus SERMO</a> contient ${noDocs}
 						sermons protestants francophones, édités pour la plupart à Genève,
 						entre 1550 et 1750, représentant ${tokens["body_sermon"]} tokens.
 						Ces textes ont été préparés pour l’analyse et l’exploitation
@@ -39,6 +39,7 @@
 
 
 			</table>
+			<g:include controller="collection" action="listeDesSermons"/>
 
 		</div>
 	</div>
