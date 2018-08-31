@@ -65,8 +65,26 @@
 					</td>
 
 				</tr>
+				<tr class="block">
+					<td class="column span-22 last">
+						<h2>Inauguration SERMO 30 août 2018</h2> 
+					</td>
 
+				</tr>
+				<tr class="block">
+		<td>
+			
+			
+				<div id="demo">
 
+<video width=80% controls>
+  <source src="http://sermo.unine.ch/videos/demo.mp4" type="video/mp4">
+    <p> Votre navigateur ne prend pas en charge la vidéo HTML5. Vous trouverez cette video <a href="http://sermo.unine.ch/videos/demo.mp4">içi</a>
+</video>
+</div>
+		</td>
+	</tr>
+				
 			</table>
 
 		</div>

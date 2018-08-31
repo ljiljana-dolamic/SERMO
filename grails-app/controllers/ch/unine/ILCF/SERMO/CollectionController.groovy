@@ -231,7 +231,13 @@ class CollectionController {
    
    def downloadPDF(){
    
-   
+	   def doc_id = params.doc_id
+	   def fileName = doc_id+".pdf"
+	   def pdfdir = grailsApplication.config.sermoPDFDefault.filedir
+	   def file = new File(pdfdir,fileName)
+	   byte[] pdfBytes = file.bytes
+	   response.contentType = "application/pdf";
+	   response.outputStream << pdfBytes
 }
 
   

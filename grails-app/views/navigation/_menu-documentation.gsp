@@ -27,7 +27,11 @@
 									Tutoriels
 	
 								</g:link></li>
-
+<li><g:link controller="documentation" action="index"
+				params="[part: 'outils']">
+									Outils
+	
+								</g:link></li>
 
 
 </ul>

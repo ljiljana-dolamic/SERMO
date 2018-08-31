@@ -32,7 +32,13 @@
 
 							</g:link>
 			</h1></div></div></li>
-		
+		<li class="filters prepend-2 span-20"><div class="filters"><div class="filters-menu"><h1>
+				<g:link controller="documentation" action="index"
+					params="[part: 'outils']">
+								Outils
+
+							</g:link>
+			</h1></div></div></li>
 		
 	</ul>
 

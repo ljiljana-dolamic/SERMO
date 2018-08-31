@@ -19,6 +19,12 @@
 <g:elseif test="${part == 'type_sermon'}">
    <g:render template="parts/type_sermons"></g:render>
 </g:elseif>
+<g:elseif test="${part == 'outils'}">
+   <g:render template="parts/outils"></g:render>
+</g:elseif>
+<g:else>
+   <g:render template="parts/description"></g:render>
+</g:else>
 
 </div>
 

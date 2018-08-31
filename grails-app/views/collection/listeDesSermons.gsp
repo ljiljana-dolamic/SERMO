@@ -12,10 +12,10 @@
 					src="${resource(dir:'images/sermo',file:'xml-icon.png')}"
 					alt="xml" height="24px" target="_blank" title="xml"/>
 			</g:link>
-<%--			<g:link action="downloadPDF" params ="[doc_id:doc.doc_id]"><img --%>
-<%--					src="${resource(dir:'images/sermo',file:'pdf-icon.png')}"--%>
-<%--					alt="pdf" height="24px" target="_blank" title="pdf"/>--%>
-<%--			</g:link>--%>
+			<g:link action="downloadPDF" params ="[doc_id:doc.doc_id]"><img 
+					src="${resource(dir:'images/sermo',file:'pdf-icon.png')}"
+					alt="pdf" height="24px" target="_blank" title="pdf"/>
+			</g:link>
 		</td>	
 		</tr>		
 	</g:each>

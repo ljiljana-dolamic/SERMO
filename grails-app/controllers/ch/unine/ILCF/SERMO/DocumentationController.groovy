@@ -1,5 +1,7 @@
 package ch.unine.ILCF.SERMO
 
+import groovy.json.JsonSlurper
+
 class DocumentationController {
 	
     def collectionService
@@ -72,6 +74,16 @@ class DocumentationController {
 		response.outputStream << xmlBytes
 	 }
 	
+	def downloadXML(){
+		def doc_id = params.doc_id
+		def fileName = doc_id+".xml"
+		def xmldir = grailsApplication.config.downloadDir
+		def file = new File(xmldir,fileName)
+		byte[] xmlBytes = file.bytes
+		response.contentType = "text/xml";
+		response.outputStream << xmlBytes
+	 }
+	
 	def bibPdfLink(){
 		def doc_id = params.doc_id
 		
@@ -93,5 +105,14 @@ class DocumentationController {
 		
 		[name_v:name_v,source_v:source_v]
 		
+	}
+	
+	def listVideoTutorials(){
+		def downloadDir=grailsApplication.config.downloadDir
+		def jsonFile = "sermo_tutoriel.json"
+		def jsonSlurper = new JsonSlurper()
+		def object = jsonSlurper.parseText(new File(downloadDir,jsonFile).getText())
+		
+		[tutorials:object]
 	}
 }

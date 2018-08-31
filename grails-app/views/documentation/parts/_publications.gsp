@@ -24,6 +24,30 @@
 					<td><h1>Bibliographie</h1></td>
 				</tr>
 			</table>
+			<table style="width: 100%">
+
+
+				<tr class="block">
+					<td><h2>Bibles</h></td>
+				</tr>
+			</table>
+			<table style="width: 100%" id="bibtex_bibBibles">
+
+			</table>
+			
+			<hr>
+			<table style="width: 100%">
+
+
+				<tr class="block">
+					<td><h2>Dictionnaires et grammaires</h></td>
+				</tr>
+			</table>
+			<table style="width: 100%" id="bibtex_bibDicoGram">
+
+			</table>
+			
+			<hr>
 			
 			<table style="width: 100%">
 
@@ -32,7 +56,6 @@
 					<td><h2>Livres</h></td>
 				</tr>
 			</table>
-			<%--<tr class="block" id="bibtex_display">					--%>
 			<table style="width: 100%" id="bibtex_bibBook">
 
 			</table>
@@ -58,6 +81,8 @@
 <%--    <g:render template= "bibContent" model="[bibCode:sermoBook]"></g:render>--%>
    <g:include controller="documentation" action="bibContent" params="[bibCode:'sermoPubBib', target:'bibtex_sermoPubBib', pdf:'pdf']"/>
    <g:include controller="documentation" action="bibContent" params="[bibCode:'sermoPubBibNoPdf', target:'bibtex_sermoPubBibNoPdf']"/>
+   <g:include controller="documentation" action="bibContent" params="[bibCode:'sermoBibBIBLES', target:'bibtex_bibBibles']"/>
+   <g:include controller="documentation" action="bibContent" params="[bibCode:'sermoBibDictionnaires', target:'bibtex_bibDicoGram']"/>
    <g:include controller="documentation" action="bibContent" params="[bibCode:'sermoBibBook', target:'bibtex_bibBook']"/>
    <g:include controller="documentation" action="bibContent" params="[bibCode:'sermoBibArticle', target:'bibtex_bibArticle']"/>
     
@@ -66,7 +91,7 @@
 
 
 
-<table >
+<table style="display:none" >
 <tr class="bibtex_template">
     <td>
     <span class="author"></span> (<span class="if year"><span class="year"></span></span>).
@@ -107,5 +132,5 @@
       <div class="modal-footer">
         
       </div>
-    </div><!-- /.modal-content -->
+   </div><!-- /modal-content --> 
 </div><!-- /.modal -->

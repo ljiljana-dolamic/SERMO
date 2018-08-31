@@ -1,5 +1,5 @@
 <div id="footer">
-<table class="footer_logos">
+<table class="footer_logos" width="100%">
 <tr>
 <td class="footer_logo">
 <div id="unineLogo" >
@@ -22,12 +22,13 @@
 			</a>
 			</div>
 </td>
+<td>&nbsp;&nbsp;</td>
+<td width="200pt"  id="contact">
+ <strong>Contact:</strong> carine.skupien@unine.ch
+</td>
 </tr>
+
 </table>
-<%--<div id="unineLogo" class="footer_logo">--%>
-<%--			<a href="http://www.unine.ch" >--%>
-<%--				<img class="logo" src="${resource(dir:'images/sermo',file:'logo_unine_hover.png')}" alt="UniNE"/>--%>
-<%--			</a>--%>
-<%--			</div>--%>
+
 </div>
 	
